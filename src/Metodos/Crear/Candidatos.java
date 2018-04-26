@@ -9,10 +9,7 @@ package Metodos.Crear;
 import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.jcbmCandidato;
 import java.util.ArrayList;
-/**
- *
- * @author david
- */
+
 public class Candidatos {
     ArrayList <Integer> temNum =new ArrayList<>();    
     boolean estaCuadr;
