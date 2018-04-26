@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Metodos.IarA;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author fredy-18
- */
+
 public class Ir {
     private int f;
     private int c;

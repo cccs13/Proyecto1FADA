@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Metodos.TriosAlDescubierto;
 
@@ -17,12 +13,7 @@ import static Ventanas.Principal.pista;
 import java.awt.Color;
 import java.util.ArrayList;
 
-/**
- *
- * @author david
- */
 
-//listo
 public class TriAlDescubiertoColunma_2 {
     private boolean salir;
     private ArrayList<Integer> tem = new ArrayList<Integer>();

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Metodos.ParejasOcultas;
 
@@ -17,10 +13,7 @@ import static Ventanas.Principal.pista;
 import java.awt.Color;
 import java.util.ArrayList;
 
-/**
- *
- * @author david
- */
+
 public class parejasOcultasColumna {
       boolean salir;
     private ArrayList <Integer> par = new ArrayList<Integer>();

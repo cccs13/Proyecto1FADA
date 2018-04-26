@@ -9,10 +9,7 @@ import static Ventanas.Principal.pista;
 import java.awt.Color;
 import java.util.ArrayList;
 
-/**
- *
- * @author david
- */
+
 public class ParejasAldescubiertoCuadro {
     int parejas =1;
     int posi1,posi2;

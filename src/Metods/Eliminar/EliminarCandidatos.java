@@ -1,18 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Metods.Eliminar;
 
 import Sudoku.Sudokus_;
 import java.util.ArrayList;
 
-/**
- *
- * @author david
- */
+
 public class EliminarCandidatos {
     
     public static void eliminarFila(int num, int fila, Sudokus_ m[][]){     

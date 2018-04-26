@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Metodos.ParejasDesnudas;
 
@@ -15,10 +11,7 @@ import static Ventanas.Principal.pista;
 import java.awt.Color;
 import java.util.ArrayList;
 
-/**
- *
- * @author david
- */
+
 // exclusion basada en candidatos bloquedo 1
 public class ParejasAlDescubiertoFila {
     int parejas =1;

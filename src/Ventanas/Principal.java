@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Ventanas;
 
@@ -20,10 +16,7 @@ import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showConfirmDialog;
 
 
-/**
- *
- * @author david
- */
+
 public class Principal extends javax.swing.JFrame {     
     public static Sudokus_ Msudoku[][] = new Sudokus_[9][9];
     public static int celdaComplet;

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Metodos.ParejasOcultas;
 
@@ -18,10 +14,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author david
- */
+
 public class parejasOcultasCuadros {
     boolean salir;
     private ArrayList <Integer> par = new ArrayList<Integer>();
