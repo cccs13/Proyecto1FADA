@@ -287,7 +287,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel5.setBounds(20, 30, 200, 42);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("friSudoku_v1");
+        setTitle("ProyectoFADA");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -2264,7 +2264,6 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.setText("File");
         jMenu1.setContentAreaFilled(false);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem3.setText("Nuevo Juego");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2289,7 +2288,6 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem9);
         jMenu1.add(jSeparator3);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setText("Salir");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2327,7 +2325,6 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu.add(jmiDeshacer);
 
-        jmiRehacer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
         jmiRehacer.setText("Rehacer");
         jmiRehacer.setEnabled(false);
         jmiRehacer.addActionListener(new java.awt.event.ActionListener() {
@@ -2341,7 +2338,6 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu4.setText("Ver");
 
-        jcbmCandidato.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
         jcbmCandidato.setSelected(true);
         jcbmCandidato.setText("Mostar Candidatos");
         jcbmCandidato.addActionListener(new java.awt.event.ActionListener() {
@@ -2351,7 +2347,6 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu4.add(jcbmCandidato);
 
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/armar.png"))); // NOI18N
         jMenuItem6.setText("Resolver este sudoku");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -3691,8 +3686,6 @@ public class Principal extends javax.swing.JFrame {
             jbRehacer.setEnabled(true);
             jmiRehacer.setEnabled(true);
         }
-         //Mensaje prueba
-            JOptionPane.showMessageDialog(null, "Se deciso una jugada");
     }
    private  void rehacer(){
          if(!crear){
