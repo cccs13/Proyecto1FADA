@@ -196,13 +196,8 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
         jmiDeshacer = new javax.swing.JMenuItem();
         jmiRehacer = new javax.swing.JMenuItem();
@@ -2273,39 +2268,13 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem4);
         jMenu1.add(jSeparator1);
-
-        jMenuItem10.setText("Abrir");
-        jMenu1.add(jMenuItem10);
-
-        jMenuItem9.setText("Guardar");
-        jMenu1.add(jMenuItem9);
         jMenu1.add(jSeparator3);
-
-        jMenuItem1.setText("Salir");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
         jMenu.setText("Opciones");
         jMenu.setDoubleBuffered(true);
         jMenu.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        jMenu3.setText("Color");
-
-        jMenuItem5.setText("Celda");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem5);
-
-        jMenu.add(jMenu3);
         jMenu.add(jSeparator5);
 
         jmiDeshacer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
@@ -2705,12 +2674,6 @@ public class Principal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jcbmCandidatoActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        int s = showConfirmDialog(this,"Desea Salir.. ?" );
-        if(s==0)
-            System.exit(0);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void c1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c1MousePressed
        colorCuadro(c1);
@@ -3447,33 +3410,6 @@ public class Principal extends javax.swing.JFrame {
        }// TODO add your handling code here:
     }//GEN-LAST:event_c81MousePressed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        int s = 0;
-        if(celdaComplet < 81) s = showConfirmDialog(this,"Desea Salir De la partida.. ?" );
-        if(s==0){
-            for (int i = 0; i < 9; i++) {
-                for (int j = 0; j < 9; j++) {
-                    Msudoku[i][j].getJtf().setText(null);
-                    Msudoku[i][j].setEncontrado(false);
-                    Msudoku[i][j].getCandidatos().clear();
-                    Msudoku[i][j].setNumero(0);
-                    Msudoku[i][j].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
-                    Msudoku[i][j].getJtf().setBackground(color3);   
-                }            
-            }
-            crear = true;
-            new Candidatos().PosibiDisp();
-            celdaComplet=0;
-            jButton5.setEnabled(false);
-            volverA.clear();
-            pibote=0;
-            jbDeshacer.setEnabled(false);
-            jbRehacer.setEnabled(false);
-            jmiDeshacer.setEnabled(false);
-            jmiRehacer.setEnabled(false);
-        }
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
        
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -3484,10 +3420,6 @@ public class Principal extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_formWindowClosing
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        jDialog1.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         color2= (Color)jColorChooser1.getColor();        
@@ -3538,17 +3470,6 @@ public class Principal extends javax.swing.JFrame {
     private void jbDeshacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeshacerActionPerformed
         deshacer();
     }//GEN-LAST:event_jbDeshacerActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-         info.setText("Esto puede tardar un poco");
-         dificil=false;
-        crearNuevoJuego();
-        volverA.clear();
-        pibote = 0;
-        jbDeshacer.setEnabled(false);
-        jbRehacer.setEnabled(false);
-     
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jmiDeshacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiDeshacerActionPerformed
       deshacer(); // TODO add your handling code here:
@@ -3610,6 +3531,44 @@ public class Principal extends javax.swing.JFrame {
             pista=false;  // TODO add your handling code here:
         }
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        int s = 0;
+        if(celdaComplet < 81) s = showConfirmDialog(this,"Desea Salir De la partida.. ?" );
+        if(s==0){
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    Msudoku[i][j].getJtf().setText(null);
+                    Msudoku[i][j].setEncontrado(false);
+                    Msudoku[i][j].getCandidatos().clear();
+                    Msudoku[i][j].setNumero(0);
+                    Msudoku[i][j].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
+                    Msudoku[i][j].getJtf().setBackground(color3);
+                }
+            }
+            crear = true;
+            new Candidatos().PosibiDisp();
+            celdaComplet=0;
+            jButton5.setEnabled(false);
+            volverA.clear();
+            pibote=0;
+            jbDeshacer.setEnabled(false);
+            jbRehacer.setEnabled(false);
+            jmiDeshacer.setEnabled(false);
+            jmiRehacer.setEnabled(false);
+        }
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        info.setText("Esto puede tardar un poco");
+        dificil=false;
+        crearNuevoJuego();
+        volverA.clear();
+        pibote = 0;
+        jbDeshacer.setEnabled(false);
+        jbRehacer.setEnabled(false);
+
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
     
     
     /**
@@ -3656,7 +3615,7 @@ public class Principal extends javax.swing.JFrame {
                     aux= vol.get(i);
                     Msudoku[aux.getF()][aux.getC()].addNunm(aux.getNum());          
                     Msudoku[aux.getF()][aux.getC()].getJtf().setText(null);
-                    oredenar(Msudoku[aux.getF()][aux.getC()].getCandidatos());
+                    ordenar(Msudoku[aux.getF()][aux.getC()].getCandidatos());
                     for (int fgf = 0; fgf < Msudoku[aux.getF()][aux.getC()].getCandidatos().size(); fgf++) {              
                         Msudoku[aux.getF()][aux.getC()].getJtf().append(" "+Msudoku[aux.getF()][aux.getC()].getCandidatos().get(fgf));
                     }          
@@ -3666,7 +3625,7 @@ public class Principal extends javax.swing.JFrame {
                 Msudoku[f][c].addNunm(tem.getNum());
             }
             if(!Msudoku[f][c].isEncontrado()){
-               oredenar(Msudoku[f][c].getCandidatos());
+               ordenar(Msudoku[f][c].getCandidatos());
                 for (int i = 0; i < Msudoku[f][c].getCandidatos().size(); i++) {
                     Msudoku[f][c].getJtf().append(" "+Msudoku[f][c].getCandidatos().get(i));
                 }
@@ -4056,7 +4015,7 @@ public class Principal extends javax.swing.JFrame {
                 Msudoku[fil][col].getJtf().append(" "+Msudoku[fil][col].getCandidatos().get(i));
         }
     }
-    private void oredenar( ArrayList<Integer> array){
+    private void ordenar( ArrayList<Integer> array){
         for (int i = 0; i < array.size(); i++) {
             for (int j = 0; j < array.size(); j++) {
                 if(array.get(i) < array.get(j)){
@@ -4210,18 +4169,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

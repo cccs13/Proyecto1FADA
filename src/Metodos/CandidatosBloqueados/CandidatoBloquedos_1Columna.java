@@ -11,10 +11,7 @@ import static Ventanas.Principal.pista;
 import java.awt.Color;
 import java.util.ArrayList;
 
-/**
- *
- * @author david
- */
+
 public class CandidatoBloquedos_1Columna {
     int nBeses;
     boolean estaRepetido;
@@ -118,7 +115,7 @@ public class CandidatoBloquedos_1Columna {
         if(pintar && pista){
             color(fila, colum);
             candi.setText(""+num);
-            info.setText("Candidato Bloquiedo (1)");
+            info.setText("Candidato Bloqueado (1)");
         }
     }
     void color(int fila, int columna){
