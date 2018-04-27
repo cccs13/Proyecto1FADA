@@ -49,9 +49,9 @@ public class Principal extends javax.swing.JFrame {
                     
         aux = c1;
         cronometro = new Cronometro(jlCronometro);
-        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icon.png")).getImage());
-        jDialog1.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icon.png")).getImage());
-        jDialog2.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icon.png")).getImage());
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/uni.png")).getImage());
+        jDialog1.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/uni.png")).getImage());
+        jDialog2.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/uni.png")).getImage());
         crearNuevoJuego();
     }
     /**
@@ -210,8 +210,6 @@ public class Principal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jcbmCandidato = new javax.swing.JCheckBoxMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
 
         jMenuItem8.setText("jMenuItem8");
 
@@ -2365,18 +2363,6 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setText("Ayuda");
-
-        jMenuItem7.setText("Acerca de");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem7);
-
-        jMenuBar1.add(jMenu5);
-
         setJMenuBar(jMenuBar1);
 
         setSize(new java.awt.Dimension(619, 587));
@@ -3551,13 +3537,6 @@ public class Principal extends javax.swing.JFrame {
        rehacer();
     }//GEN-LAST:event_jbRehacerActionPerformed
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-      
-      jDialog2.setBounds(this.getX()+(this.getWidth()/4), this.getY()+(this.getHeight()/4),250, 220);
-      jDialog2.setVisible(true);
-      this.setEnabled(false);
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
-
     
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
       this.setEnabled(true);
@@ -4246,7 +4225,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
@@ -4255,7 +4233,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
