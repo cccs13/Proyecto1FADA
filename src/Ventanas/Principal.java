@@ -94,6 +94,10 @@ public class Principal extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
+        info = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jlCronometro = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -186,11 +190,6 @@ public class Principal extends javax.swing.JFrame {
         c79 = new javax.swing.JTextArea();
         c70 = new javax.swing.JTextArea();
         c61 = new javax.swing.JTextArea();
-        info = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jlCronometro = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -304,7 +303,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel11.setLayout(null);
 
         candi.setFont(new java.awt.Font("Tw Cen MT", 1, 28)); // NOI18N
-        candi.setForeground(new java.awt.Color(195, 250, 250));
         candi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         candi.setText("--");
         candi.setToolTipText("Candidato");
@@ -454,7 +452,33 @@ public class Principal extends javax.swing.JFrame {
         jSeparator7.setBounds(10, 180, 75, 10);
 
         getContentPane().add(jPanel11);
-        jPanel11.setBounds(512, 10, 100, 520);
+        jPanel11.setBounds(0, 0, 100, 500);
+
+        info.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        info.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        info.setOpaque(true);
+        getContentPane().add(info);
+        info.setBounds(10, 510, 250, 20);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        jLabel2.setOpaque(true);
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(260, 510, 120, 20);
+
+        jlCronometro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jlCronometro.setText(" 0:0:0");
+        jlCronometro.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        jlCronometro.setOpaque(true);
+        getContentPane().add(jlCronometro);
+        jlCronometro.setBounds(380, 510, 70, 20);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel3.setText("Difícil");
+        jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        jLabel3.setOpaque(true);
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(450, 510, 60, 20);
 
         jPanel13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel13.setName(""); // NOI18N
@@ -2216,38 +2240,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel13);
-        jPanel13.setBounds(10, 10, 500, 500);
-
-        info.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        info.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        info.setOpaque(true);
-        getContentPane().add(info);
-        info.setBounds(10, 510, 250, 20);
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(260, 510, 120, 20);
-
-        jlCronometro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jlCronometro.setText(" 0:0:0");
-        jlCronometro.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jlCronometro.setOpaque(true);
-        getContentPane().add(jlCronometro);
-        jlCronometro.setBounds(380, 510, 70, 20);
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel3.setText("Difícil");
-        jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jLabel3.setOpaque(true);
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(450, 510, 60, 20);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/F0B.jpg"))); // NOI18N
-        jLabel6.setText("jLabel6");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(4, 4, 630, 620);
+        jPanel13.setBounds(100, 0, 500, 500);
 
         jMenu1.setText("File");
         jMenu1.setContentAreaFilled(false);
@@ -4166,7 +4159,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu4;
