@@ -3691,6 +3691,8 @@ public class Principal extends javax.swing.JFrame {
             jbRehacer.setEnabled(true);
             jmiRehacer.setEnabled(true);
         }
+         //Mensaje prueba
+            JOptionPane.showMessageDialog(null, "Se deciso una jugada");
     }
    private  void rehacer(){
          if(!crear){
