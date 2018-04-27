@@ -74,7 +74,6 @@ public class Principal extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jDialog2 = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
@@ -256,10 +255,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jDialog2.getContentPane().add(jLabel1);
         jLabel1.setBounds(90, 90, 130, 33);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/prese.png"))); // NOI18N
-        jDialog2.getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 80, 50, 50);
 
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton8.setText("Ok");
@@ -4157,7 +4152,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     public static javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu;
     private javax.swing.JMenu jMenu1;
