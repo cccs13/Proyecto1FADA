@@ -82,7 +82,6 @@ public class Principal extends javax.swing.JFrame {
         jbRehacer = new javax.swing.JButton();
         jbDeshacer = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
@@ -345,12 +344,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel11.add(jSeparator4);
         jSeparator4.setBounds(10, 380, 75, 10);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("..");
-        jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel11.add(jButton2);
-        jButton2.setBounds(50, 320, 30, 30);
-
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton6.setText("1");
         jButton6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -448,7 +441,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel11.add(jButton16);
-        jButton16.setBounds(10, 320, 30, 30);
+        jButton16.setBounds(30, 320, 30, 30);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/78.png"))); // NOI18N
         jButton5.setToolTipText("Pista");
@@ -4200,7 +4193,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
