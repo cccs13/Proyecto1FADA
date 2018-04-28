@@ -1,4 +1,4 @@
-
+//proyecto fada
 
 package Metodos.CandidatosBloqueados;
 
