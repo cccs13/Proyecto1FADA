@@ -1,8 +1,7 @@
 
 
-package Metodos.Fada3;
+package Metodos.Fada4;
 
-import Metodos.FadaPO.parejasOcultasCuadros;
 import Metodos.Fada1.Fada1D;
 import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.candi;
@@ -14,7 +13,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class TriAlDescubiertoColunma_2 {
+public class FadaCDC3 {
     private boolean salir;
     private ArrayList<Integer> tem = new ArrayList<Integer>();
     private int beses;
@@ -27,27 +26,27 @@ public class TriAlDescubiertoColunma_2 {
             if(salir)break;
         }
        if(salir && !pista) new Fada1D().buscarSencillo();
-       else if(!salir)new parejasOcultasCuadros().buscar();
+       else if(!salir)new FadaCDCua2().buscar();
     }
     private void buscarTrio(int columna){        
         for (int fil = 0; fil < 9; fil++) {  
             tem.clear();
             tem =  (ArrayList<Integer>) Msudoku[fil][columna].getCandidatos().clone();
-            if(!Msudoku[fil][columna].isEncontrado() && tem.size()==2){ 
+            if(!Msudoku[fil][columna].isEncontrado() && tem.size()==3){ 
                 for (int i = 0; i < NoExisten.size(); i++) {
                     beses=1;
                     if(completarTrio(NoExisten.get(i))){
                         quitareliminar(columna);
                         Msudoku[fil][columna].setElimianr(false);
                         existeTrio(columna, fil);
-                        if(beses==3){
+                        if(beses==4){
                             eliminarCandidatos(columna);
                             if(salir){                         
                                 fil=9;
                                 break;
                             }
                         }
-                        tem.remove(2);
+                        tem.remove(3);
                     }
                 }
             }
@@ -55,7 +54,7 @@ public class TriAlDescubiertoColunma_2 {
     }
     private void quitareliminar(int columna){
         for (int fila = 0; fila < 9; fila++) {
-            Msudoku[fila][columna].setElimianr(true);
+             Msudoku[fila][columna].setElimianr(true);
         }
     }
     private boolean completarTrio(int num){        
@@ -81,7 +80,7 @@ public class TriAlDescubiertoColunma_2 {
     private void existeTrio(int columa, int fil){
         for (int fila = 0; fila < 9; fila++) {
             if(fila != fil){
-                if(!Msudoku[fila][columa].isEncontrado() && Msudoku[fila][columa].getCandidatos().size() < 3){
+                if(!Msudoku[fila][columa].isEncontrado() && Msudoku[fila][columa].getCandidatos().size() < 5){
                     if(iguales(Msudoku[fila][columa].getCandidatos())){
                         Msudoku[fila][columa].setElimianr(false);
                         beses++; 
@@ -115,8 +114,8 @@ public class TriAlDescubiertoColunma_2 {
                             salir = true;
                             if(!pista){
                                 Msudoku[fila][columna].EliminarCandidato((Integer)aux.get(j));
+                                j--;  
                                 dificil=true;
-                                j--;                               
                                 if(jcbmCandidato.isSelected()){
                                     Msudoku[fila][columna].getJtf().setText(null);
                                     for (int h = 0; h < Msudoku[fila][columna].getCandidatos().size(); h++) {
@@ -126,7 +125,7 @@ public class TriAlDescubiertoColunma_2 {
                             }
                             else{
                                 Msudoku[fila][columna].getJtf().setBackground(new Color(253,253,174)); 
-                                 Msudoku[fila][columna].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(Color.GREEN,2));
+                                Msudoku[fila][columna].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(Color.GREEN,2));
                                 pintar =true;
                                 i=9;
                                 break;    
@@ -139,7 +138,7 @@ public class TriAlDescubiertoColunma_2 {
         if(pintar && pista){
             pintar(columna);
             candi.setText("--");
-            info.setText("Exclusión basada en Trio Desnudos");
+            info.setText("Exclusión basada en Cuartetos desnudos");
         } 
     }
     private void pintar(int columna){
@@ -148,5 +147,5 @@ public class TriAlDescubiertoColunma_2 {
                 Msudoku[f][columna].getJtf().setBackground(new Color(69,196,84));
             } 
         }   
-    }
+    } 
 }

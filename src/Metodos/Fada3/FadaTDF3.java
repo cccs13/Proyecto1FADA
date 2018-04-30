@@ -1,5 +1,6 @@
 
-package Metodos.Fada4;
+
+package Metodos.Fada3;
 
 import Metodos.Fada1.Fada1D;
 import static Ventanas.Principal.Msudoku;
@@ -12,29 +13,28 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class CuartetosDesnudosFila_4 {
+public class FadaTDF3 {
     boolean salir;
      ArrayList<Integer> tem;
      int beses;
     public void buscar(){
         salir=false;
         for (int fila = 0; fila < 9; fila++) {
-            buscarCuartetos(fila);
+            buscarTrio(fila);
             if(salir)break;
         }
-       if(salir && !pista) new Fada1D().buscarSencillo();
-       else if(!salir) new CuartetosDesnudosColumna_4().buscar();
+        if(salir && !pista) new Fada1D().buscarSencillo();
+        else if(!salir)new FadaTDF2().buscar();
     }
-    private void buscarCuartetos(int fila){
-                
+    private void buscarTrio(int fila){        
         for (int col = 0; col < 9; col++) {
             tem = Msudoku[fila][col].getCandidatos();
-            if(!Msudoku[fila][col].isEncontrado() && tem.size()==4){  
+            if(!Msudoku[fila][col].isEncontrado() && tem.size()==3){  
                 beses=1;
                 quitareliminar(fila);
                 Msudoku[fila][col].setElimianr(false);
-                existeCuartetos(fila, col);
-                if(beses==4){
+                existeTrio(fila, col);
+                if(beses==3){
                     eliminarCandidatos(fila);
                     if(salir){
                         break;
@@ -43,10 +43,15 @@ public class CuartetosDesnudosFila_4 {
             }
         }
     }
-     void existeCuartetos(int fila, int col){
+    void quitareliminar(int fila){
+        for (int col = 0; col < 9; col++) {
+             Msudoku[fila][col].setElimianr(true);
+        }
+    }
+    void existeTrio(int fila, int col){
         for (int columna = 0; columna < 9; columna++) {
           if(columna != col){
-              if(!Msudoku[fila][columna].isEncontrado() && Msudoku[fila][columna].getCandidatos().size()<5 ){
+              if(!Msudoku[fila][columna].isEncontrado() && Msudoku[fila][columna].getCandidatos().size()<4 ){
                   if(iguales(Msudoku[fila][columna].getCandidatos())){
                         Msudoku[fila][columna].setElimianr(false);
                         beses++; 
@@ -55,12 +60,12 @@ public class CuartetosDesnudosFila_4 {
             }  
         }   
     }
-      private boolean iguales( ArrayList<Integer> cuar){
+    private boolean iguales( ArrayList<Integer> tri){
         boolean noIgual;
-        for (int i = 0; i < cuar.size(); i++) {
+        for (int i = 0; i < tri.size(); i++) {
             noIgual= false;
             for (int j = 0; j < tem.size(); j++) {
-                if(cuar.get(i) == tem.get(j)){
+                if(tri.get(i) == tem.get(j)){
                     noIgual = true;
                     break;                    
                 }
@@ -69,12 +74,7 @@ public class CuartetosDesnudosFila_4 {
         }       
         return true;
     }
-   void quitareliminar(int fila){
-        for (int col = 0; col < 9; col++) {
-             Msudoku[fila][col].setElimianr(true);
-        }
-    } 
-   void eliminarCandidatos(int fila){
+    void eliminarCandidatos(int fila){
         boolean pintar=false;
         for (int columna = 0; columna < 9; columna++) {
             if(Msudoku[fila][columna].isElimianr() && !Msudoku[fila][columna].isEncontrado()) {
@@ -109,10 +109,10 @@ public class CuartetosDesnudosFila_4 {
         if(pintar && pista){
             pintar(fila);
             candi.setText("--");
-            info.setText("Exclusión basada en Cuartetos desnudos");
+            info.setText("Exclusión basada en Trios Desnudos");
         }
-    }  
-   private void pintar(int fila){
+    }                            
+    private void pintar(int fila){
         for (int c = 0; c < 9; c++) {         
             if(!Msudoku[fila][c].isEncontrado() && !Msudoku[fila][c].isElimianr()){
                 Msudoku[fila][c].getJtf().setBackground(new Color(69,196,84));

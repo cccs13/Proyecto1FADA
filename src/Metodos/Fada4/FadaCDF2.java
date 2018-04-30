@@ -1,5 +1,6 @@
 
-package Metodos.Fada3;
+
+package Metodos.Fada4;
 
 import Metodos.Fada1.Fada1D;
 import static Ventanas.Principal.Msudoku;
@@ -11,16 +12,12 @@ import static Ventanas.Principal.pista;
 import java.awt.Color;
 import java.util.ArrayList;
 
-/**
- *
- * @author david
- */
-//listo
-public class TriAlDescubiertoFila_2 {
+
+public class FadaCDF2 {
      private boolean salir;
-     private ArrayList<Integer> tem = new ArrayList<Integer>();
-     private int beses;
-     private ArrayList<Integer> NoExisten = new ArrayList<>();
+    private ArrayList<Integer> tem = new ArrayList<Integer>();
+    private int beses;
+    private ArrayList<Integer> NoExisten = new ArrayList<>();
     public void buscar(){
         salir=false;
         for (int fila = 0; fila < 9; fila++) {
@@ -29,31 +26,37 @@ public class TriAlDescubiertoFila_2 {
             if(salir)break;
         }
         if(salir && !pista) new Fada1D().buscarSencillo();
-        else if(!salir) new TriDescubiertoColumna_3().buscar();
+        else if(!salir) new FadaCDC2().buscar();
     }
     private void buscarTrio(int fila){        
-        for (int col = 0; col < 9; col++) {
+        for (int col = 0; col < 9; col++) {  
             tem.clear();
-            tem = (ArrayList<Integer>) Msudoku[fila][col].getCandidatos().clone();
+            tem =  (ArrayList<Integer>) Msudoku[fila][col].getCandidatos().clone();
             if(!Msudoku[fila][col].isEncontrado() && tem.size()==2){ 
-                for (int i = 0; i < NoExisten.size(); i++) {
-                    beses=1;
+                for (int i = 0; i < NoExisten.size(); i++) {  
                     if(completarTrio(NoExisten.get(i))){
-                        quitareliminar(fila);
-                        Msudoku[fila][col].setElimianr(false);
-                        existeTrio(fila, col);
-                        if(beses==3){
-                            eliminarCandidatos(fila);
-                            if(salir){
-                                col=9;                                
-                                break;
+                        for (int j = i; j < NoExisten.size(); j++){ 
+                            beses=1;
+                            if(completarTrio(NoExisten.get(j))){
+                                quitareliminar(fila);
+                                Msudoku[fila][col].setElimianr(false);
+                                existeTrio(fila, col);
+                                if(beses==4){
+                                    eliminarCandidatos(fila);
+                                    if(salir){                         
+                                        col=9;
+                                        i=9;
+                                        break;
+                                    }
+                                }
+                                tem.remove(3);                        
                             }
-                        }
+                        }                                                
                         tem.remove(2);
                     }
                 }
             }
-        }    
+        }            
     }
     private void quitareliminar(int fila){
         for (int col = 0; col < 9; col++) {
@@ -63,14 +66,15 @@ public class TriAlDescubiertoFila_2 {
     private void existeTrio(int fila, int col){
         for (int columna = 0; columna < 9; columna++) {
             if(columna != col){
-                if(!Msudoku[fila][columna].isEncontrado() && Msudoku[fila][columna].getCandidatos().size()<3 ){
+                if(!Msudoku[fila][columna].isEncontrado() && Msudoku[fila][columna].getCandidatos().size()<5 ){
                     if(iguales(Msudoku[fila][columna].getCandidatos())){
                         Msudoku[fila][columna].setElimianr(false);
                         beses++; 
                     }
                 }
             }
-        }    
+        }
+    
     }
     private boolean iguales( ArrayList<Integer> tri){
         boolean noIgual;
@@ -116,8 +120,8 @@ public class TriAlDescubiertoFila_2 {
                         if(tem.get(i) == aux.get(j)){
                             salir=true;
                             if(!pista){
-                                Msudoku[fila][columna].EliminarCandidato(aux.get(j));
                                 dificil=true;
+                                Msudoku[fila][columna].EliminarCandidato(aux.get(j));
                                 j--;   
                                 if(jcbmCandidato.isSelected()){
                                     Msudoku[fila][columna].getJtf().setText(null);
@@ -141,7 +145,7 @@ public class TriAlDescubiertoFila_2 {
          if(pintar && pista){
             pintar(fila);
             candi.setText("--");
-            info.setText("Exclusión basada en Trios Desnudos");
+            info.setText("Exclusión basada en Cuartetos desnudos");
         }
      }
      private void pintar(int fila){
@@ -150,5 +154,5 @@ public class TriAlDescubiertoFila_2 {
                 Msudoku[fila][c].getJtf().setBackground(new Color(69,196,84));
             } 
         }   
-    }
+    }  
 }

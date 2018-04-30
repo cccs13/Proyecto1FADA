@@ -2,8 +2,8 @@
 //proyecto fada
 package Ventanas;
 
-import Metodos.Crear.Candidatos;
-import Metodos.Crear.CrearMatirz;
+import Metodos.Crear.FadaCandidatos;
+import Metodos.Crear.FadaCrearMatriz;
 import Metodos.FadaIR.Ir;
 import Metodos.Fada1.Fada1D;
 import Metods.Eliminar.EliminarCandidatos;
@@ -43,7 +43,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        new CrearMatirz().CrearM();
+        new FadaCrearMatriz().CrearM();
 //        crearNuevoJuego();
         
                     
@@ -3535,7 +3535,7 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
             crear = true;
-            new Candidatos().PosibiDisp();
+            new FadaCandidatos().PosibiDisp();
             celdaComplet=0;
             jButton5.setEnabled(false);
             volverA.clear();
@@ -3691,7 +3691,7 @@ public class Principal extends javax.swing.JFrame {
         dificil=false;
         try{
             reiniciar();
-            new Candidatos().PosibiDisp();
+            new FadaCandidatos().PosibiDisp();
             int num ;
             int f = (int)(Math.random()*9);
             int c =((int) (Math.random()*9));;
@@ -3756,7 +3756,7 @@ public class Principal extends javax.swing.JFrame {
              cronometro.resumen();
              if(dificil) jLabel3.setText("Dificil");
              else jLabel3.setText("Normal");
-             new Candidatos().PosibiDisp();
+             new FadaCandidatos().PosibiDisp();
          }
         }catch(Exception e){
             crearNuevoJuego();
@@ -3832,7 +3832,7 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         jLabel2.setText("Celdas Completadas "+celdaComplet);
-        new Candidatos().PosibiDisp();
+        new FadaCandidatos().PosibiDisp();
      }
     public void addEvento(final JMenuItem jMen){
         jMen.addActionListener(new java.awt.event.ActionListener() {

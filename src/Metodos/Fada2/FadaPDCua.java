@@ -10,7 +10,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class ParejasAldescubiertoCuadro {
+public class FadaPDCua {
     int parejas =1;
     int posi1,posi2;
     boolean iguales, salir;
@@ -27,7 +27,7 @@ public class ParejasAldescubiertoCuadro {
             } 
         }
         if(salir && !pista) new Fada1D().buscarSencillo();
-        else if(!salir) new ParejasAlDescubiertoFila().parejas();
+        else if(!salir) new FadaPDF().parejas();
     }
     void buscarParejasCuadro_1(int fila, int columnas){
         for (int fi = fila*3; fi < (fila*3)+3; fi++) {

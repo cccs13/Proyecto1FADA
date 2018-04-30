@@ -1,9 +1,9 @@
 
 
-package Metodos.Fada3;
+package Metodos.Fada4;
 
-import Metodos.FadaPO.parejasOcultasCuadros;
 import Metodos.Fada1.Fada1D;
+import Metodos.Fada3.FadaTDC2;
 import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.candi;
 import static Ventanas.Principal.dificil;
@@ -14,28 +14,28 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class TriDescubiertoColumna_3 {
-    boolean salir;
+public class FadaCDC4 {
+        boolean salir;
     ArrayList<Integer> tem;
     int beses;
     public void buscar(){
         salir=false;
         for (int columa = 0; columa < 9; columa++) {
-            buscarTrio(columa);
+            buscarCuartetos(columa);
             if(salir)break;
         }
         if(salir && !pista) new Fada1D().buscarSencillo();
-        else if(!salir)new TriAlDescubiertoColunma_2().buscar();
+        else if(!salir)new FadaCDCua3().buscar();
     }
-    private void buscarTrio(int columna){        
+    private void buscarCuartetos(int columna){        
         for (int fil = 0; fil < 9; fil++) {
             tem = Msudoku[fil][columna].getCandidatos();
-            if(!Msudoku[fil][columna].isEncontrado() && tem.size()==3){  
+            if(!Msudoku[fil][columna].isEncontrado() && tem.size()==4){  
                 beses=1;
                 quitareliminar(columna);
                 Msudoku[fil][columna].setElimianr(false);
-                existeTrio(columna, fil);
-                if(beses==3){
+                existeCuarteto(columna, fil);
+                if(beses==4){
                     eliminarCandidatos(columna);
                     if(salir){
                         break;
@@ -49,10 +49,10 @@ public class TriDescubiertoColumna_3 {
              Msudoku[fila][columna].setElimianr(true);
         }
     }
-    void existeTrio(int columa, int fil){
+    void existeCuarteto(int columa, int fil){
         for (int fila = 0; fila < 9; fila++) {
           if(fila != fil){
-              if(!Msudoku[fila][columa].isEncontrado() && Msudoku[fila][columa].getCandidatos().size()<4 ){
+              if(!Msudoku[fila][columa].isEncontrado() && Msudoku[fila][columa].getCandidatos().size()<5 ){
                   if(iguales(Msudoku[fila][columa].getCandidatos())){
                         Msudoku[fila][columa].setElimianr(false);
                         beses++; 
@@ -98,8 +98,8 @@ public class TriDescubiertoColumna_3 {
                             }
                             else{
                                Msudoku[fila][columna].getJtf().setBackground(new Color(253,253,174)); 
-                               Msudoku[fila][columna].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(Color.GREEN,2));
                                 pintar =true;
+                                Msudoku[fila][columna].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(Color.GREEN,2));
                                 i=9;
                                 break;    
                             }
@@ -113,7 +113,7 @@ public class TriDescubiertoColumna_3 {
          if(pintar && pista){
             pintar(columna);
             candi.setText("--");
-            info.setText("Exclusión basada en Trios Desnudos");
+            info.setText("Exclusión basada en Cuartetos desnudos");
         }
  
      }
@@ -125,3 +125,4 @@ public class TriDescubiertoColumna_3 {
         }   
     }
 }
+

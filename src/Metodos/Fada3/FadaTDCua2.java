@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 
-public class TrioAldescubiertoCudro_2 {
+public class FadaTDCua2 {
     ArrayList<Integer> tem = new ArrayList<>();
     int bese;
     boolean salir=false;
@@ -32,7 +32,7 @@ public class TrioAldescubiertoCudro_2 {
             }
         }
         if(salir && !pista)new Fada1D().buscarSencillo();
-        else if(!salir) new TriAldescubiertoFila_3().buscar();
+        else if(!salir) new FadaTDF3().buscar();
     }
     public void buscarTrio(int fila, int columna){
         for (int fil = fila*3; fil < fila*3+3; fil++) {

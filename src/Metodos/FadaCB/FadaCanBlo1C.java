@@ -12,7 +12,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class CandidatoBloquedos_1Columna {
+public class FadaCanBlo1C {
     int nBeses;
     boolean estaRepetido;
     int idColum;
@@ -30,7 +30,7 @@ public class CandidatoBloquedos_1Columna {
             if(salir)break;            
             }
        if(salir && ! pista) new Fada1O().buscarSencilloOculto();
-       else if(!salir)new CandidatosBloquedos_1Fila().buscar();      
+       else if(!salir)new FadaCanBlo1F().buscar();      
             
     }   
     public void buscarCandidatos(int fila, int columna){        

@@ -1,9 +1,7 @@
 
-
-package Metodos.Fada4;
+package Metodos.Fada3;
 
 import Metodos.Fada1.Fada1D;
-import Metodos.Fada3.TriDescubiertoColumna_3;
 import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.candi;
 import static Ventanas.Principal.dificil;
@@ -13,12 +11,16 @@ import static Ventanas.Principal.pista;
 import java.awt.Color;
 import java.util.ArrayList;
 
-
-public class CuartetosDesnudosFila_3 {
-    private boolean salir;
-    private ArrayList<Integer> tem = new ArrayList<Integer>();
-    private int beses;
-    private ArrayList<Integer> NoExisten = new ArrayList<>();
+/**
+ *
+ * @author david
+ */
+//listo
+public class FadaTDF2 {
+     private boolean salir;
+     private ArrayList<Integer> tem = new ArrayList<Integer>();
+     private int beses;
+     private ArrayList<Integer> NoExisten = new ArrayList<>();
     public void buscar(){
         salir=false;
         for (int fila = 0; fila < 9; fila++) {
@@ -27,32 +29,31 @@ public class CuartetosDesnudosFila_3 {
             if(salir)break;
         }
         if(salir && !pista) new Fada1D().buscarSencillo();
-        else if(!salir) new CuartetosDesnudosColumna_3().buscar();
+        else if(!salir) new FadaTDC3().buscar();
     }
     private void buscarTrio(int fila){        
         for (int col = 0; col < 9; col++) {
             tem.clear();
             tem = (ArrayList<Integer>) Msudoku[fila][col].getCandidatos().clone();
-            if(!Msudoku[fila][col].isEncontrado() && tem.size()==3){ 
+            if(!Msudoku[fila][col].isEncontrado() && tem.size()==2){ 
                 for (int i = 0; i < NoExisten.size(); i++) {
                     beses=1;
                     if(completarTrio(NoExisten.get(i))){
                         quitareliminar(fila);
                         Msudoku[fila][col].setElimianr(false);
                         existeTrio(fila, col);
-                        if(beses==4){
+                        if(beses==3){
                             eliminarCandidatos(fila);
                             if(salir){
                                 col=9;                                
                                 break;
                             }
                         }
-                        tem.remove(3);
+                        tem.remove(2);
                     }
                 }
             }
-        }
-    
+        }    
     }
     private void quitareliminar(int fila){
         for (int col = 0; col < 9; col++) {
@@ -62,15 +63,14 @@ public class CuartetosDesnudosFila_3 {
     private void existeTrio(int fila, int col){
         for (int columna = 0; columna < 9; columna++) {
             if(columna != col){
-                if(!Msudoku[fila][columna].isEncontrado() && Msudoku[fila][columna].getCandidatos().size()<5 ){
+                if(!Msudoku[fila][columna].isEncontrado() && Msudoku[fila][columna].getCandidatos().size()<3 ){
                     if(iguales(Msudoku[fila][columna].getCandidatos())){
                         Msudoku[fila][columna].setElimianr(false);
                         beses++; 
                     }
                 }
             }
-        }
-    
+        }    
     }
     private boolean iguales( ArrayList<Integer> tri){
         boolean noIgual;
@@ -117,8 +117,8 @@ public class CuartetosDesnudosFila_3 {
                             salir=true;
                             if(!pista){
                                 Msudoku[fila][columna].EliminarCandidato(aux.get(j));
-                                j--;   
                                 dificil=true;
+                                j--;   
                                 if(jcbmCandidato.isSelected()){
                                     Msudoku[fila][columna].getJtf().setText(null);
                                    for (int h = 0; h < Msudoku[fila][columna].getCandidatos().size(); h++) {
@@ -141,7 +141,7 @@ public class CuartetosDesnudosFila_3 {
          if(pintar && pista){
             pintar(fila);
             candi.setText("--");
-            info.setText("Exclusión basada en Cuartetos desnudos");
+            info.setText("Exclusión basada en Trios Desnudos");
         }
      }
      private void pintar(int fila){
@@ -150,5 +150,5 @@ public class CuartetosDesnudosFila_3 {
                 Msudoku[fila][c].getJtf().setBackground(new Color(69,196,84));
             } 
         }   
-    }  
+    }
 }

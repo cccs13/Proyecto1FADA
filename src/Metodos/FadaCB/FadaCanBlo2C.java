@@ -12,7 +12,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class CandidatosBloquedos_2Columna {
+public class FadaCanBlo2C {
   boolean salir = false;
     public void buscarC(){
         salir = false;
@@ -21,7 +21,7 @@ public class CandidatosBloquedos_2Columna {
             if(salir)break;
         }
         if(salir && !pista) new Fada1D().buscarSencillo();
-        else if(!salir)new CandidatoBloquedos_2Fila().buscar();
+        else if(!salir)new FadaCanBlo2F().buscar();
     }
     public void buscarCandidatos(int columna){
         for (int fila = 0; fila < 9; fila++) {

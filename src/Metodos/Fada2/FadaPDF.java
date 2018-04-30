@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 
 // exclusion basada en candidatos bloquedo 1
-public class ParejasAlDescubiertoFila {
+public class FadaPDF {
     int parejas =1;
     int posi1,posi2;
     boolean iguales;
@@ -29,7 +29,7 @@ public class ParejasAlDescubiertoFila {
         }
         
         if(salir && !pista)new Fada1D().buscarSencillo();
-        else if(!salir) new ParejasAlDescubiertoColumnas().parejas();
+        else if(!salir) new FadaPDC().parejas();
     }
     void buscarPareja1(int fila){
         for (int co = 0; co < 9; co++) {            

@@ -13,7 +13,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class CuartetosDesnudosColumna_3 {
+public class FadaCDC2 {
     private boolean salir;
     private ArrayList<Integer> tem = new ArrayList<Integer>();
     private int beses;
@@ -26,27 +26,37 @@ public class CuartetosDesnudosColumna_3 {
             if(salir)break;
         }
        if(salir && !pista) new Fada1D().buscarSencillo();
-       else if(!salir)new CuartetosDesnudosCuadro_2().buscar();
+       else if(!salir){
+           if(pista)info.setText("No hay pista disponible..");
+           else info.setText("No hay solucion");
+           info.setBackground(new Color(255,95,95));
+       }
     }
     private void buscarTrio(int columna){        
         for (int fil = 0; fil < 9; fil++) {  
             tem.clear();
             tem =  (ArrayList<Integer>) Msudoku[fil][columna].getCandidatos().clone();
-            if(!Msudoku[fil][columna].isEncontrado() && tem.size()==3){ 
-                for (int i = 0; i < NoExisten.size(); i++) {
-                    beses=1;
+            if(!Msudoku[fil][columna].isEncontrado() && tem.size()==2){ 
+                for (int i = 0; i < NoExisten.size(); i++) {  
                     if(completarTrio(NoExisten.get(i))){
-                        quitareliminar(columna);
-                        Msudoku[fil][columna].setElimianr(false);
-                        existeTrio(columna, fil);
-                        if(beses==4){
-                            eliminarCandidatos(columna);
-                            if(salir){                         
-                                fil=9;
-                                break;
+                        for (int j = i; j < NoExisten.size(); j++){ 
+                            beses=1;
+                            if(completarTrio(NoExisten.get(j))){
+                                quitareliminar(columna);
+                                Msudoku[fil][columna].setElimianr(false);
+                                existeTrio(columna, fil);
+                                if(beses==4){
+                                    eliminarCandidatos(columna);
+                                    if(salir){                         
+                                        fil=9;
+                                        i=9;
+                                        break;
+                                    }
+                                }
+                                tem.remove(3);                        
                             }
-                        }
-                        tem.remove(3);
+                        }                                                
+                        tem.remove(2);
                     }
                 }
             }
@@ -99,7 +109,7 @@ public class CuartetosDesnudosColumna_3 {
                     break;                    
                 }
             }
-           if(!noIgual) return false; 
+            if(!noIgual) return false; 
         }       
         return true;
     }
@@ -114,8 +124,8 @@ public class CuartetosDesnudosColumna_3 {
                             salir = true;
                             if(!pista){
                                 Msudoku[fila][columna].EliminarCandidato((Integer)aux.get(j));
-                                j--;  
                                 dificil=true;
+                                j--;                               
                                 if(jcbmCandidato.isSelected()){
                                     Msudoku[fila][columna].getJtf().setText(null);
                                     for (int h = 0; h < Msudoku[fila][columna].getCandidatos().size(); h++) {

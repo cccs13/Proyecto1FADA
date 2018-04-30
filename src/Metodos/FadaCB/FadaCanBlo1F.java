@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 
 // exclusion basada en candidatos bloquedo 12
-public class CandidatosBloquedos_1Fila {
+public class FadaCanBlo1F {
     int nBeses;
     boolean estaRepetido;
     int idFil;
@@ -32,7 +32,7 @@ public class CandidatosBloquedos_1Fila {
             
             }
        if(salir && !pista) new Fada1O().buscarSencilloOculto();
-       else if(!salir)new CandidatosBloquedos_2Columna().buscarC();            
+       else if(!salir)new FadaCanBlo2C().buscarC();            
     }
     public void buscarCandidatos(int fila, int columna){        
             for (int fil = fila*3; fil < fila*3+3; fil++) {

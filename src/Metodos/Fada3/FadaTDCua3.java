@@ -13,7 +13,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class TrioAldescubiertoCuadro_3 {
+public class FadaTDCua3 {
     ArrayList<Integer> tem;
     int bese;
     boolean salir = false;
@@ -28,7 +28,7 @@ public class TrioAldescubiertoCuadro_3 {
             }
         }
         if(salir && !pista)new Fada1D().buscarSencillo();
-        else if(!salir)new TrioAldescubiertoCudro_2().buscar();
+        else if(!salir)new FadaTDCua2().buscar();
     }
     public void buscarTrio(int fila, int columna){
         for (int fil = fila*3; fil < fila*3+3; fil++) {

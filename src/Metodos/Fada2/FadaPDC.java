@@ -1,7 +1,7 @@
 //proyecto fada
 package Metodos.Fada2;
 
-import Metodos.FadaCB.CandidatoBloquedos_1Columna;
+import Metodos.FadaCB.FadaCanBlo1C;
 import Metodos.Fada1.Fada1D;
 import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.candi;
@@ -12,7 +12,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class ParejasAlDescubiertoColumnas {
+public class FadaPDC {
     int parejas =1;
     int posi2;
     boolean iguales;
@@ -25,7 +25,7 @@ public class ParejasAlDescubiertoColumnas {
                 if(salir)break;
         }
         if(salir && !pista) new Fada1D().buscarSencillo();
-        else if(!salir) new CandidatoBloquedos_1Columna().buscar();
+        else if(!salir) new FadaCanBlo1C().buscar();
     }
     void buscarPareja1(int columna){
         for (int fi = 0; fi < 9; fi++) {            

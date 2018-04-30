@@ -13,7 +13,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class CuartetosDesnudosCuadro_2 {
+public class FadaCDCua3 {
      ArrayList<Integer> tem = new ArrayList<>();
     int bese;
     boolean salir=false;
@@ -30,36 +30,31 @@ public class CuartetosDesnudosCuadro_2 {
             }
         }
         if(salir && !pista)new Fada1D().buscarSencillo();
-        else if(!salir) new CuartetosDesnudosFila_2().buscar();
+        else if(!salir) new FadaCDF3().buscar();
     }
     public void buscarTrio(int fila, int columna){
         for (int fil = fila*3; fil < fila*3+3; fil++) {
             for (int col = columna*3; col < columna*3+3; col++) {
                 tem.clear();
                 tem = (ArrayList<Integer>) Msudoku[fil][col].getCandidatos().clone();
-                if(!Msudoku[fil][col].isEncontrado() && tem.size() == 2){                                       
+                if(!Msudoku[fil][col].isEncontrado() && tem.size() == 3){                                       
                     for (int i = 0; i < NoExisten.size(); i++) {
-                       if(completarTrio(NoExisten.get(i))){
-                            for (int j = i; j < NoExisten.size(); j++) { 
-                                bese=1; 
-                                if(completarTrio(NoExisten.get(j))){
-                                    quitarEliminar(fila, columna);
-                                    Msudoku[fil][col].setElimianr(false);
-                                    existeTrio(fila, columna, fil, col);
-                                    if(bese==4){
-                                       eliminar(fila, columna); 
-                                       if(salir){
-                                          fil=9;
-                                          col=9;
-                                          break;
-                                        }
-                                    }
-                                   tem.remove(3);
-                                }
-                            }
-                            tem.remove(2);
-                       }
-                    }                     
+                        bese=1; 
+                        if(completarTrio(NoExisten.get(i))){
+                            quitarEliminar(fila, columna);
+                            Msudoku[fil][col].setElimianr(false);
+                            existeTrio(fila, columna, fil, col);
+                            if(bese==4){
+                              eliminar(fila, columna); 
+                              if(salir){
+                                fil=9;
+                                col=9;
+                                break;
+                             }
+                           }
+                           tem.remove((int)3);
+                        }                        
+                    }
                 }
             }
         }
@@ -111,7 +106,8 @@ public class CuartetosDesnudosCuadro_2 {
                 }
             }
            if(!noIgual) return false; 
-        }       
+        }
+       
         return true;
     }
     private void quitarEliminar(int fila, int columna){
@@ -144,7 +140,7 @@ public class CuartetosDesnudosCuadro_2 {
                             }
                             else{
                                 Msudoku[fil][col].getJtf().setBackground(new Color(253,253,174)); 
-                                Msudoku[fil][col].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(Color.GREEN,2));
+                                Msudoku[fil][columna].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(Color.GREEN,2));
                                 pintar=true;
                                 i=9;
                                 break; 

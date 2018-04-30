@@ -6,7 +6,7 @@ import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.jcbmCandidato;
 import java.util.ArrayList;
 
-public class Candidatos {
+public class FadaCandidatos {
     ArrayList <Integer> temNum =new ArrayList<>();    
     boolean estaCuadr;
     boolean estaFil;

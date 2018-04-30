@@ -9,9 +9,9 @@ import javax.swing.JOptionPane;
 
 
 
-public class CrearMatirz {
+public class FadaCrearMatriz {
 
-    public CrearMatirz() {
+    public FadaCrearMatriz() {
     }
     
     public void CrearM(){

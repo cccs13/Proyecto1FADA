@@ -1,7 +1,7 @@
 
 package Metodos.Fada1;
 
-import Metodos.Fada2.ParejasAldescubiertoCuadro;
+import Metodos.Fada2.FadaPDCua;
 import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.celdaComplet;
 import static Ventanas.Principal.info;
@@ -33,7 +33,7 @@ public class Fada1O {
  
         }
         if(salir && !pista)   new Fada1D().buscarSencillo();
-        else if(!salir) new ParejasAldescubiertoCuadro().parejas();
+        else if(!salir) new FadaPDCua().parejas();
     }
     void sencillo(int posiFil, int posiCol){        
         numerosExistentes(posiFil, posiCol);        

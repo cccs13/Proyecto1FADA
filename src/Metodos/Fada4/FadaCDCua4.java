@@ -3,7 +3,7 @@
 package Metodos.Fada4;
 
 import Metodos.Fada1.Fada1D;
-import Metodos.Fada3.TrioAldescubiertoCudro_2;
+import Metodos.Fada3.FadaTDCua2;
 import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.candi;
 import static Ventanas.Principal.dificil;
@@ -14,7 +14,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class CuartetosDesnudosCuadro_4 {
+public class FadaCDCua4 {
        ArrayList<Integer> tem;
     int bese;
     boolean salir = false;
@@ -29,7 +29,7 @@ public class CuartetosDesnudosCuadro_4 {
             }
         }
         if(salir && !pista)new Fada1D().buscarSencillo();
-       else if(!salir)new CuartetosDesnudosFila_4().buscar();
+       else if(!salir)new FadaCDF4().buscar();
     }
     public void buscarTrio(int fila, int columna){
         for (int fil = fila*3; fil < fila*3+3; fil++) {

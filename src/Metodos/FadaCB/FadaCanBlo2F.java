@@ -3,7 +3,7 @@
 package Metodos.FadaCB;
 
 import Metodos.Fada1.Fada1D;
-import Metodos.Fada3.TrioAldescubiertoCuadro_3;
+import Metodos.Fada3.FadaTDCua3;
 import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.candi;
 import static Ventanas.Principal.info;
@@ -12,7 +12,7 @@ import static Ventanas.Principal.pista;
 import java.awt.Color;
 
 
-public class CandidatoBloquedos_2Fila {
+public class FadaCanBlo2F {
    boolean salir = false;
     public void buscar(){
         for (int fila = 0; fila < 9; fila++) {
@@ -20,7 +20,7 @@ public class CandidatoBloquedos_2Fila {
            if(salir)break; 
         }
         if(salir && !pista) new Fada1D().buscarSencillo();
-        else if(!salir)new TrioAldescubiertoCuadro_3().buscar();
+        else if(!salir)new FadaTDCua3().buscar();
     }
     public void buscarCandidatos(int fila){
 //        existentes(fila);

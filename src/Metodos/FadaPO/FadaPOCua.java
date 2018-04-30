@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 
-public class parejasOcultasCuadros {
+public class FadaPOCua {
     boolean salir;
     private ArrayList <Integer> par = new ArrayList<Integer>();
     public void buscar(){
@@ -30,7 +30,7 @@ public class parejasOcultasCuadros {
             }            
         }
         if(salir && !pista) new Fada1D().buscarSencillo();
-        else if(!salir) new parejasOcultasFila().buscar();
+        else if(!salir) new FadaPOF().buscar();
     }
     private void buscarPareja(int fila, int columna ){
         for (int fil = fila*3; fil < fila*3+3; fil++) {

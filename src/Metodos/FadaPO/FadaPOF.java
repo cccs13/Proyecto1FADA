@@ -2,7 +2,7 @@
 
 package Metodos.FadaPO;
 
-import Metodos.Fada4.CuartetosDesnudosCuadro_4;
+import Metodos.Fada4.FadaCDCua4;
 import Metodos.Fada1.Fada1D;
 import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.candi;
@@ -13,7 +13,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 
-public class parejasOcultasFila {
+public class FadaPOF {
     boolean salir;
     private ArrayList <Integer> par = new ArrayList<Integer>();
     public void buscar(){
@@ -25,7 +25,7 @@ public class parejasOcultasFila {
                 }     
         }
         if(salir && !pista) new Fada1D().buscarSencillo();
-        else if(!salir) new parejasOcultasColumna().buscar();
+        else if(!salir) new FadaPOC().buscar();
     }
     private void buscarPareja(int fila ){      
             for (int col = 0;col < 9; col++) {                
