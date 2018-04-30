@@ -51,7 +51,7 @@ public class FadaCandidatos {
             }
         }   
     }
-    private boolean estaNumeroEnSubCuadro(int num){// Miramos si esta en el dubCuadro
+    private boolean estaNumeroEnSubCuadro(int num){// Miramos si esta en el subCuadro
         for (int i = 0; i < temNum.size(); i++) {
            if(num == temNum.get(i)){
                return true;

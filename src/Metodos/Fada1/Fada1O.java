@@ -80,7 +80,7 @@ public class Fada1O {
                      else { 
                         Msudoku[psiF][psiC].getJtf().setBackground(new Color(253,253,174));
                          Msudoku[psiF][psiC].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(Color.GREEN,2));
-                         info.setText("Sencillo Ocilto");
+                         info.setText("Sencillo Oculto");
                         candi.setText(""+numOcul);
                          
                      }

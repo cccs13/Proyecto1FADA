@@ -6,8 +6,8 @@ import Metodos.Crear.FadaCandidatos;
 import Metodos.Crear.FadaCrearMatriz;
 import Metodos.FadaIR.Ir;
 import Metodos.Fada1.Fada1D;
-import Metods.Eliminar.EliminarCandidatos;
-import Sudoku.Sudokus_;
+import Metods.Eliminar.FadaEliminarCandidatos;
+import Sudoku.FadaSudokuSecundario;
 import Time.Cronometro;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import static javax.swing.JOptionPane.showConfirmDialog;
 
 
 public class Principal extends javax.swing.JFrame {     
-    public static Sudokus_ Msudoku[][] = new Sudokus_[9][9];
+    public static FadaSudokuSecundario Msudoku[][] = new FadaSudokuSecundario[9][9];
     public static int celdaComplet;
     public  javax.swing.JTextArea aux = c1;
     public static  Cronometro cronometro;
@@ -3709,9 +3709,9 @@ public class Principal extends javax.swing.JFrame {
                   Msudoku[f][c].setNumero(num);
                   Msudoku[f][c].setEncontrado(true);
                   celdaComplet++;
-                  EliminarCandidatos.eliminarFila(num, f, Msudoku);
-                  EliminarCandidatos.eliminarColumna(num, c, Msudoku);
-                  EliminarCandidatos.eliminarRegion(num, f, c, Msudoku);
+                  FadaEliminarCandidatos.eliminarFila(num, f, Msudoku);
+                  FadaEliminarCandidatos.eliminarColumna(num, c, Msudoku);
+                  FadaEliminarCandidatos.eliminarRegion(num, f, c, Msudoku);
                   sudoku[f][c] = num; 
                   dificil=false;
                }

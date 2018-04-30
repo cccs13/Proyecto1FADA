@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import javax.swing.JTextArea;
 
 
-public class Sudokus_ {
+public class FadaSudokuSecundario {
     private boolean encontrado;
     private boolean elimianr;
     private int numero = 0;
     private ArrayList<Integer> candidatos;
     private JTextArea jtf;
 
-    public Sudokus_(boolean encontrado, int numero, JTextArea c) {
+    public FadaSudokuSecundario(boolean encontrado, int numero, JTextArea c) {
         this.encontrado = encontrado;
         this.numero = numero;
         this.candidatos =  new ArrayList<Integer>();
