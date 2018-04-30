@@ -4,8 +4,8 @@ package Ventanas;
 
 import Metodos.Crear.Candidatos;
 import Metodos.Crear.CrearMatirz;
-import Metodos.IarA.Ir;
-import Metodos.Sencillos.SencilloAlDescubierto;
+import Metodos.FadaIR.Ir;
+import Metodos.Fada1.Fada1D;
 import Metods.Eliminar.EliminarCandidatos;
 import Sudoku.Sudokus_;
 import Time.Cronometro;
@@ -3437,7 +3437,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        new SencilloAlDescubierto().buscarSencillo(); // TODO add your handling code here:
+        new Fada1D().buscarSencillo(); // TODO add your handling code here:
         
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
@@ -3515,7 +3515,7 @@ public class Principal extends javax.swing.JFrame {
                    Msudoku[i][j].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204), 1));
                 }
             }
-            new SencilloAlDescubierto().buscarSencillo();
+            new Fada1D().buscarSencillo();
             pista=false;  // TODO add your handling code here:
         }
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -3716,7 +3716,7 @@ public class Principal extends javax.swing.JFrame {
                   dificil=false;
                }
             }
-            new SencilloAlDescubierto().buscarSencillo();
+            new Fada1D().buscarSencillo();
            if(celdaComplet==81 )break; 
         }
         if(celdaComplet==81){
