@@ -3630,6 +3630,12 @@ public class Principal extends javax.swing.JFrame {
                 MatrizS[f][c].getJtf().setText(" "+tem.getNum());
                 MatrizS[f][c].setEncontrado(true); 
                 MatrizS[f][c].getJtf().setBackground(color2); 
+                
+ //////////////////////////////////////////////////////////////////////////////////////               
+         JOptionPane.showMessageDialog(null, MatrizS[f][c].getJtf());
+         
+//////////////////////////////////////////////////////////////////////////////
+
                 MatrizS[f][c].setNumero(tem.getNum());
                 jLabel2.setText("Celdas completadas "+celdaComplet);
                 ArrayList<Ir>vol = tem.getVol();
