@@ -1,5 +1,5 @@
 
-//proyecto fada
+//Proyecto fada
 package Ventanas;
 
 import Metodos.Crear.FadaCandidatos;
@@ -8,7 +8,6 @@ import Metodos.FadaIR.Ir;
 import Metodos.Fada1.Fada1D;
 import Metodo.FadaEliminar.FadaEliminarCandidatos;
 import Sudoku.FadaSudoku;
-//import Time.Cronometro;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JMenuItem;
@@ -18,7 +17,7 @@ import static javax.swing.JOptionPane.showConfirmDialog;
 
 
 public class Principal extends javax.swing.JFrame {     
-    public static FadaSudoku Msudoku[][] = new FadaSudoku[9][9];
+    public static FadaSudoku[][] MatrizS = new FadaSudoku[9][9];
     public static int celdaComplet;
     public  javax.swing.JTextArea aux = c1;
     //public static  Cronometro cronometro;
@@ -2634,8 +2633,8 @@ public class Principal extends javax.swing.JFrame {
         if(!jcbmCandidato.isSelected()){  
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
-                    if(!Msudoku[i][j].isEncontrado()){
-                        Msudoku[i][j].getJtf().setText(null);
+                    if(!MatrizS[i][j].isEncontrado()){
+                        MatrizS[i][j].getJtf().setText(null);
                     }
                 }
                 
@@ -2644,9 +2643,9 @@ public class Principal extends javax.swing.JFrame {
         else{
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
-                   if(! Msudoku[i][j].isEncontrado()){
-                       for (int k = 0; k <  Msudoku[i][j].getCandidatos().size(); k++) {
-                           Msudoku[i][j].getJtf().append(" "+Msudoku[i][j].getCandidatos().get(k));
+                   if(! MatrizS[i][j].isEncontrado()){
+                       for (int k = 0; k <  MatrizS[i][j].getCandidatos().size(); k++) {
+                           MatrizS[i][j].getJtf().append(" "+MatrizS[i][j].getCandidatos().get(k));
                        }
                    }
                 }
@@ -3405,8 +3404,8 @@ public class Principal extends javax.swing.JFrame {
         color2= (Color)jColorChooser1.getColor();        
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if(!Msudoku[i][j].isEncontrado())
-                    Msudoku[i][j].getJtf().setBackground(color2);
+                if(!MatrizS[i][j].isEncontrado())
+                    MatrizS[i][j].getJtf().setBackground(color2);
             }            
         }
         jDialog1.dispose();
@@ -3501,10 +3500,10 @@ public class Principal extends javax.swing.JFrame {
             info.setBackground(new Color(240,240,240));
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
-                   if(Msudoku[i][j].isEncontrado())
-                     Msudoku[i][j].getJtf().setBackground(color2);
-                   else Msudoku[i][j].getJtf().setBackground(color3);  
-                   Msudoku[i][j].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204), 1));
+                   if(MatrizS[i][j].isEncontrado())
+                     MatrizS[i][j].getJtf().setBackground(color2);
+                   else MatrizS[i][j].getJtf().setBackground(color3);  
+                   MatrizS[i][j].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204), 1));
                 }
             }
             new Fada1D().buscarSencillo();
@@ -3518,12 +3517,12 @@ public class Principal extends javax.swing.JFrame {
         if(s==0){
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
-                    Msudoku[i][j].getJtf().setText(null);
-                    Msudoku[i][j].setEncontrado(false);
-                    Msudoku[i][j].getCandidatos().clear();
-                    Msudoku[i][j].setNumero(0);
-                    Msudoku[i][j].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
-                    Msudoku[i][j].getJtf().setBackground(color3);
+                    MatrizS[i][j].getJtf().setText(null);
+                    MatrizS[i][j].setEncontrado(false);
+                    MatrizS[i][j].getCandidatos().clear();
+                    MatrizS[i][j].setNumero(0);
+                    MatrizS[i][j].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
+                    MatrizS[i][j].getJtf().setBackground(color3);
                 }
             }
             crear = true;
@@ -3558,15 +3557,15 @@ public class Principal extends javax.swing.JFrame {
         
         for (int f = 0; f < 9; f++) {
             for (int c = 0; c < 9; c++) {
-                if(Msudoku[f][c].isEncontrado())
-                    Msudoku[f][c].getJtf().setBackground(color2);
-                else Msudoku[f][c].getJtf().setBackground(color3); 
+                if(MatrizS[f][c].isEncontrado())
+                    MatrizS[f][c].getJtf().setBackground(color2);
+                else MatrizS[f][c].getJtf().setBackground(color3); 
                 
-                if(!Msudoku[f][c].isEncontrado()){                 
-                    ArrayList <Integer>tem = Msudoku[f][c].getCandidatos(); 
+                if(!MatrizS[f][c].isEncontrado()){                 
+                    ArrayList <Integer>tem = MatrizS[f][c].getCandidatos(); 
                     for (int i = 0; i < tem.size(); i++) {
                         if(tem.get(i)==num){
-                             Msudoku[f][c].getJtf().setBackground(new Color(171,241,171));
+                             MatrizS[f][c].getJtf().setBackground(new Color(171,241,171));
                         break;
                         }
                     }
@@ -3579,35 +3578,35 @@ public class Principal extends javax.swing.JFrame {
             Ir tem = volverA.get(pibote-1);
             int f=tem.getF();
             int c = tem.getC();
-            Msudoku[f][c].getJtf().setText(null);
+            MatrizS[f][c].getJtf().setText(null);
             if(tem.getTipo()==1){
                 celdaComplet--;
-                Msudoku[f][c].getCandidatos().clear();
-                Msudoku[f][c].setCandidato((ArrayList<Integer>) tem.getCan().clone());
-                Msudoku[f][c].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
-                Msudoku[f][c].setEncontrado(false);
-                Msudoku[f][c].getJtf().setBackground(color3); 
-                Msudoku[f][c].setNumero(0); 
+                MatrizS[f][c].getCandidatos().clear();
+                MatrizS[f][c].setCandidato((ArrayList<Integer>) tem.getCan().clone());
+                MatrizS[f][c].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
+                MatrizS[f][c].setEncontrado(false);
+                MatrizS[f][c].getJtf().setBackground(color3); 
+                MatrizS[f][c].setNumero(0); 
                 jLabel2.setText("Celdas completadas "+celdaComplet);
                 ArrayList<Ir>vol = tem.getVol();
                 Ir aux = null;    
                 for (int i = 0; i < vol.size(); i++) {            
                     aux= vol.get(i);
-                    Msudoku[aux.getF()][aux.getC()].addNunm(aux.getNum());          
-                    Msudoku[aux.getF()][aux.getC()].getJtf().setText(null);
-                    ordenar(Msudoku[aux.getF()][aux.getC()].getCandidatos());
-                    for (int fgf = 0; fgf < Msudoku[aux.getF()][aux.getC()].getCandidatos().size(); fgf++) {              
-                        Msudoku[aux.getF()][aux.getC()].getJtf().append(" "+Msudoku[aux.getF()][aux.getC()].getCandidatos().get(fgf));
+                    MatrizS[aux.getF()][aux.getC()].addNunm(aux.getNum());          
+                    MatrizS[aux.getF()][aux.getC()].getJtf().setText(null);
+                    ordenar(MatrizS[aux.getF()][aux.getC()].getCandidatos());
+                    for (int fgf = 0; fgf < MatrizS[aux.getF()][aux.getC()].getCandidatos().size(); fgf++) {              
+                        MatrizS[aux.getF()][aux.getC()].getJtf().append(" "+MatrizS[aux.getF()][aux.getC()].getCandidatos().get(fgf));
                     }          
                 }
             }
             else{
-                Msudoku[f][c].addNunm(tem.getNum());
+                MatrizS[f][c].addNunm(tem.getNum());
             }
-            if(!Msudoku[f][c].isEncontrado()){
-               ordenar(Msudoku[f][c].getCandidatos());
-                for (int i = 0; i < Msudoku[f][c].getCandidatos().size(); i++) {
-                    Msudoku[f][c].getJtf().append(" "+Msudoku[f][c].getCandidatos().get(i));
+            if(!MatrizS[f][c].isEncontrado()){
+               ordenar(MatrizS[f][c].getCandidatos());
+                for (int i = 0; i < MatrizS[f][c].getCandidatos().size(); i++) {
+                    MatrizS[f][c].getJtf().append(" "+MatrizS[f][c].getCandidatos().get(i));
                 }
             }
             pibote--;
@@ -3625,35 +3624,35 @@ public class Principal extends javax.swing.JFrame {
             Ir tem = volverA.get(pibote-1);
             int f=tem.getF();
             int c = tem.getC();
-            Msudoku[f][c].getJtf().setText(null);
+            MatrizS[f][c].getJtf().setText(null);
             if(tem.getTipo()==1){
                 celdaComplet++;
-                Msudoku[f][c].getCandidatos().clear();
-                Msudoku[f][c].addNunm(tem.getNum());
-                Msudoku[f][c].getJtf().setFont(new java.awt.Font("Monospaced", 1, 24));
-                Msudoku[f][c].getJtf().setText(" "+tem.getNum());
-                Msudoku[f][c].setEncontrado(true); 
-                Msudoku[f][c].getJtf().setBackground(color2); 
-                Msudoku[f][c].setNumero(tem.getNum());
+                MatrizS[f][c].getCandidatos().clear();
+                MatrizS[f][c].addNunm(tem.getNum());
+                MatrizS[f][c].getJtf().setFont(new java.awt.Font("Monospaced", 1, 24));
+                MatrizS[f][c].getJtf().setText(" "+tem.getNum());
+                MatrizS[f][c].setEncontrado(true); 
+                MatrizS[f][c].getJtf().setBackground(color2); 
+                MatrizS[f][c].setNumero(tem.getNum());
                 jLabel2.setText("Celdas completadas "+celdaComplet);
                 ArrayList<Ir>vol = tem.getVol();
                 Ir aux = null;    
                 for (int i = 0; i < vol.size(); i++) {            
                     aux= vol.get(i);
-                    Msudoku[aux.getF()][aux.getC()].getCandidatos().remove((Integer)aux.getNum());          
-                    Msudoku[aux.getF()][aux.getC()].getJtf().setText(null);                    
-                    for (int fgf = 0; fgf < Msudoku[aux.getF()][aux.getC()].getCandidatos().size(); fgf++) {              
-                        Msudoku[aux.getF()][aux.getC()].getJtf().append(" "+Msudoku[aux.getF()][aux.getC()].getCandidatos().get(fgf));
+                    MatrizS[aux.getF()][aux.getC()].getCandidatos().remove((Integer)aux.getNum());          
+                    MatrizS[aux.getF()][aux.getC()].getJtf().setText(null);                    
+                    for (int fgf = 0; fgf < MatrizS[aux.getF()][aux.getC()].getCandidatos().size(); fgf++) {              
+                        MatrizS[aux.getF()][aux.getC()].getJtf().append(" "+MatrizS[aux.getF()][aux.getC()].getCandidatos().get(fgf));
                     }          
                 }      
             }
             else{
-                Msudoku[f][c].getCandidatos().remove((Integer)tem.getNum());
+                MatrizS[f][c].getCandidatos().remove((Integer)tem.getNum());
                 
             }
-            if(!Msudoku[f][c].isEncontrado()){                
-                for (int i = 0; i < Msudoku[f][c].getCandidatos().size(); i++) {
-                   Msudoku[f][c].getJtf().append(" "+Msudoku[f][c].getCandidatos().get(i));
+            if(!MatrizS[f][c].isEncontrado()){                
+                for (int i = 0; i < MatrizS[f][c].getCandidatos().size(); i++) {
+                   MatrizS[f][c].getJtf().append(" "+MatrizS[f][c].getCandidatos().get(i));
                 }
             }
             if(pibote==volverA.size()){
@@ -3669,12 +3668,12 @@ public class Principal extends javax.swing.JFrame {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {  
                 sudoku[i][j]=0;
-                Msudoku[i][j].setEncontrado(false);
-                Msudoku[i][j].getCandidatos().clear();
-                Msudoku[i][j].setNumero(0);
-                Msudoku[i][j].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
-                Msudoku[i][j].getJtf().setBackground(color3);   
-                Msudoku[i][j].getJtf().setText(null);
+                MatrizS[i][j].setEncontrado(false);
+                MatrizS[i][j].getCandidatos().clear();
+                MatrizS[i][j].setNumero(0);
+                MatrizS[i][j].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
+                MatrizS[i][j].getJtf().setBackground(color3);   
+                MatrizS[i][j].getJtf().setText(null);
             }            
         } 
       
@@ -3690,20 +3689,20 @@ public class Principal extends javax.swing.JFrame {
             nevoJuego=true;        
             while(true){            
             if(celdaComplet < 81 ){               
-                while(Msudoku[f][c].isEncontrado() && celdaComplet < 81){ 
+                while(MatrizS[f][c].isEncontrado() && celdaComplet < 81){ 
                        f = ((int) (Math.random()*9));
                        c = ((int) (Math.random()*9));                    
                 }               
-                if(!Msudoku[f][c].isEncontrado()){
-                  num =  Msudoku[f][c].getCandidatos().get((int)(Math.random()*Msudoku[f][c].getCandidatos().size()));
-                  Msudoku[f][c].getCandidatos().clear();
-                  Msudoku[f][c].addNunm(num);
-                  Msudoku[f][c].setNumero(num);
-                  Msudoku[f][c].setEncontrado(true);
+                if(!MatrizS[f][c].isEncontrado()){
+                  num =  MatrizS[f][c].getCandidatos().get((int)(Math.random()*MatrizS[f][c].getCandidatos().size()));
+                  MatrizS[f][c].getCandidatos().clear();
+                  MatrizS[f][c].addNunm(num);
+                  MatrizS[f][c].setNumero(num);
+                  MatrizS[f][c].setEncontrado(true);
                   celdaComplet++;
-                  FadaEliminarCandidatos.eliminarFila(num, f, Msudoku);
-                  FadaEliminarCandidatos.eliminarColumna(num, c, Msudoku);
-                  FadaEliminarCandidatos.eliminarRegion(num, f, c, Msudoku);
+                  FadaEliminarCandidatos.eliminarFila(num, f, MatrizS);
+                  FadaEliminarCandidatos.eliminarColumna(num, c, MatrizS);
+                  FadaEliminarCandidatos.eliminarRegion(num, f, c, MatrizS);
                   sudoku[f][c] = num; 
                   dificil=false;
                }
@@ -3715,25 +3714,25 @@ public class Principal extends javax.swing.JFrame {
             int tem[][]= new int[9][9];
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {  
-                    tem[i][j]= Msudoku[i][j].getNumero();
-                    Msudoku[i][j].setEncontrado(false);
-                    Msudoku[i][j].getCandidatos().clear();
-                    Msudoku[i][j].setNumero(0);
-                    Msudoku[i][j].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
-                    Msudoku[i][j].getJtf().setBackground(color3);   
-                    Msudoku[i][j].getJtf().setText(null);
+                    tem[i][j]= MatrizS[i][j].getNumero();
+                    MatrizS[i][j].setEncontrado(false);
+                    MatrizS[i][j].getCandidatos().clear();
+                    MatrizS[i][j].setNumero(0);
+                    MatrizS[i][j].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
+                    MatrizS[i][j].getJtf().setBackground(color3);   
+                    MatrizS[i][j].getJtf().setText(null);
                 }            
             }
             celdaComplet=0;             
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {                     
                     if(sudoku[i][j] !=0){
-                        Msudoku[i][j].addNunm(sudoku[i][j]);
-                        Msudoku[i][j].setNumero(sudoku[i][j]);
-                        Msudoku[i][j].setEncontrado(true);
-                        Msudoku[i][j].getJtf().setFont(new java.awt.Font("Monospaced", 1, 24));                            
-                        Msudoku[i][j].getJtf().setText(" "+sudoku[i][j]);
-                        Msudoku[i][j].getJtf().setBackground(color2); 
+                        MatrizS[i][j].addNunm(sudoku[i][j]);
+                        MatrizS[i][j].setNumero(sudoku[i][j]);
+                        MatrizS[i][j].setEncontrado(true);
+                        MatrizS[i][j].getJtf().setFont(new java.awt.Font("Monospaced", 1, 24));                            
+                        MatrizS[i][j].getJtf().setText(" "+sudoku[i][j]);
+                        MatrizS[i][j].getJtf().setBackground(color2); 
                         celdaComplet++;  
                     }
                 }
@@ -3754,7 +3753,7 @@ public class Principal extends javax.swing.JFrame {
     }
     void colorCuadro(javax.swing.JTextArea cc){
         if(celdaComplet < 81){
-           if(Msudoku[fila][columna].isEncontrado())
+           if(MatrizS[fila][columna].isEncontrado())
                 aux.setBackground(color2);
            else aux.setBackground(color3);       
            cc.setBackground(color1);
@@ -3765,12 +3764,12 @@ public class Principal extends javax.swing.JFrame {
         
         if(sudoku[fila][columna] != (Integer)Integer.parseInt(jMen.getName()) || !tieSolucion){
             iarA(Integer.parseInt(jMen.getName()),2);
-            Msudoku[fila][columna].EliminarCandidato((Integer)Integer.parseInt(jMen.getName()));
+            MatrizS[fila][columna].EliminarCandidato((Integer)Integer.parseInt(jMen.getName()));
         
-           Msudoku[fila][columna].getJtf().setText(null);
+           MatrizS[fila][columna].getJtf().setText(null);
             if(jcbmCandidato.isSelected()){
-              for (int i = 0; i < Msudoku[fila][columna].getCandidatos().size(); i++) {
-                 Msudoku[fila][columna].getJtf().append(" "+ Msudoku[fila][columna].getCandidatos().get(i));
+              for (int i = 0; i < MatrizS[fila][columna].getCandidatos().size(); i++) {
+                 MatrizS[fila][columna].getJtf().append(" "+ MatrizS[fila][columna].getCandidatos().get(i));
             }        
         }
         }
@@ -3781,17 +3780,17 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed2(java.awt.event.ActionEvent evt,JMenuItem jMen) {   
         if(sudoku[fila][columna] == (Integer)Integer.parseInt(jMen.getName()) || crear  || !tieSolucion ){
             iarA(Integer.parseInt(String.valueOf(jMen.getName())),1);
-            Msudoku[fila][columna].setEncontrado(true);   
-            Msudoku[fila][columna].getJtf().setText(" "+jMen.getName());
-            Msudoku[fila][columna].setNumero(Integer.parseInt(String.valueOf(jMen.getName())));
-            Msudoku[fila][columna].setEncontrado(true);
-            Msudoku[fila][columna].getJtf().setFont(new java.awt.Font("Monospaced", 1, 24));                         
-            Msudoku[fila][columna].getJtf().setEditable(false);
+            MatrizS[fila][columna].setEncontrado(true);   
+            MatrizS[fila][columna].getJtf().setText(" "+jMen.getName());
+            MatrizS[fila][columna].setNumero(Integer.parseInt(String.valueOf(jMen.getName())));
+            MatrizS[fila][columna].setEncontrado(true);
+            MatrizS[fila][columna].getJtf().setFont(new java.awt.Font("Monospaced", 1, 24));                         
+            MatrizS[fila][columna].getJtf().setEditable(false);
             celdaComplet ++;
             jLabel2.setText("Celdas Completadas "+celdaComplet);
-            Msudoku[fila][columna].getJtf().setBackground(color2);                        
-            Msudoku[fila][columna].getCandidatos().clear();
-            Msudoku[fila][columna].addNunm(Integer.parseInt(String.valueOf(jMen.getName())));
+            MatrizS[fila][columna].getJtf().setBackground(color2);                        
+            MatrizS[fila][columna].getCandidatos().clear();
+            MatrizS[fila][columna].addNunm(Integer.parseInt(String.valueOf(jMen.getName())));
             eliminarCol(Integer.parseInt(String.valueOf(jMen.getName())));
             eliminarNumFil(Integer.parseInt(String.valueOf(jMen.getName())));
             eliminarCuadro(Integer.parseInt(String.valueOf(jMen.getName())));
@@ -3806,15 +3805,15 @@ public class Principal extends javax.swing.JFrame {
             }
     } 
      private void jMenuItem2ActionPerformed3(java.awt.event.ActionEvent evt,JMenuItem jMen) {
-        Msudoku[fila][columna].setEncontrado(false);
-        Msudoku[fila][columna].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
+        MatrizS[fila][columna].setEncontrado(false);
+        MatrizS[fila][columna].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
         celdaComplet--;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if(!Msudoku[i][j].isEncontrado()){
-                    Msudoku[i][j].getCandidatos().clear();
-                    Msudoku[i][j].getJtf().setText(null);
-                    Msudoku[i][j].setNumero(0);
+                if(!MatrizS[i][j].isEncontrado()){
+                    MatrizS[i][j].getCandidatos().clear();
+                    MatrizS[i][j].getJtf().setText(null);
+                    MatrizS[i][j].setNumero(0);
                 }
             }
         }
@@ -3849,26 +3848,26 @@ public class Principal extends javax.swing.JFrame {
            jPopupMenu1.remove(i);
            i--;
         }
-        if(!Msudoku[fila][columna].isEncontrado() ){            
-           if(!crear && Msudoku[fila][columna].getCandidatos().size()>1){
-                 for (int i = 0; i < Msudoku[fila][columna].getCandidatos().size(); i++) {
+        if(!MatrizS[fila][columna].isEncontrado() ){            
+           if(!crear && MatrizS[fila][columna].getCandidatos().size()>1){
+                 for (int i = 0; i < MatrizS[fila][columna].getCandidatos().size(); i++) {
                     jMenuItem2 = new JMenuItem();               
-                    jMenuItem2.setText("Quitar  "+Msudoku[fila][columna].getCandidatos().get(i));
+                    jMenuItem2.setText("Quitar"+MatrizS[fila][columna].getCandidatos().get(i));
                     addEvento(jMenuItem2);                              
                     jPopupMenu1.add(jMenuItem2);
-                    jMenuItem2.setName(""+Msudoku[fila][columna].getCandidatos().get(i));            
+                    jMenuItem2.setName(""+MatrizS[fila][columna].getCandidatos().get(i));            
                 }
                 jPopupMenu1.add(jSeparator2);   
            }                  
-           for (int i = 0; i < Msudoku[fila][columna].getCandidatos().size(); i++) {
+           for (int i = 0; i < MatrizS[fila][columna].getCandidatos().size(); i++) {
                jMenuItem2 = new JMenuItem();
-               jMenuItem2.setText("Fijar  "+Msudoku[fila][columna].getCandidatos().get(i));
+               jMenuItem2.setText("Fijar  "+MatrizS[fila][columna].getCandidatos().get(i));
                addEvento2(jMenuItem2);
                jPopupMenu1.add(jMenuItem2);
-               jMenuItem2.setName(""+Msudoku[fila][columna].getCandidatos().get(i));
+               jMenuItem2.setName(""+MatrizS[fila][columna].getCandidatos().get(i));
             }           
         }
-        else if(crear && Msudoku[fila][columna].isEncontrado()){
+        else if(crear && MatrizS[fila][columna].isEncontrado()){
            jMenuItem2 = new JMenuItem(); 
            jMenuItem2.setText("Borrar ");
            addEvento3(jMenuItem2);
@@ -3880,19 +3879,19 @@ public class Principal extends javax.swing.JFrame {
         if(!Character.isDigit(c)){
             evt.consume();
         }
-        else if(!Msudoku[fila][columna].isEncontrado()&&(c!='0') && estaNumero(Integer.parseInt(String.valueOf(c)))){
+        else if(!MatrizS[fila][columna].isEncontrado()&&(c!='0') && estaNumero(Integer.parseInt(String.valueOf(c)))){
             if(sudoku[fila][columna] == Integer.parseInt(String.valueOf(c)) || crear || !tieSolucion){
                 cc.setText(" "+c);
                 iarA(Integer.parseInt(String.valueOf(c)),1);
-                Msudoku[fila][columna].setNumero(Integer.parseInt(String.valueOf(c)));
-                Msudoku[fila][columna].setEncontrado(true);
+                MatrizS[fila][columna].setNumero(Integer.parseInt(String.valueOf(c)));
+                MatrizS[fila][columna].setEncontrado(true);
                 cc.setFont(new java.awt.Font("Monospaced", 1, 24));                         
-                Msudoku[fila][columna].getJtf().setEditable(false);
+                MatrizS[fila][columna].getJtf().setEditable(false);
                 celdaComplet ++;
                 jLabel2.setText("Celdas Completadas "+celdaComplet);
                 cc.setBackground(Ventanas.Principal.color2);                        
-                Msudoku[fila][columna].getCandidatos().clear();
-                Msudoku[fila][columna].addNunm(Integer.parseInt(String.valueOf(c)));
+                MatrizS[fila][columna].getCandidatos().clear();
+                MatrizS[fila][columna].addNunm(Integer.parseInt(String.valueOf(c)));
                 eliminarCol(Integer.parseInt(String.valueOf(c)));
                 eliminarNumFil(Integer.parseInt(String.valueOf(c)));
                 eliminarCuadro(Integer.parseInt(String.valueOf(c)));
@@ -3918,15 +3917,15 @@ public class Principal extends javax.swing.JFrame {
                 volverA.remove(volverA.size()-1);
             }
             if(tipo==1)
-                ir = new Ir(fila, columna, (ArrayList<Integer>) Msudoku[fila][columna].getCandidatos().clone(),num,tipo);
+                ir = new Ir(fila, columna, (ArrayList<Integer>) MatrizS[fila][columna].getCandidatos().clone(),num,tipo);
             else ir = new Ir(fila, columna, null,num,tipo);
             volverA.add(ir);
             pibote++;
         }
     }
     boolean estaNumero(int num){
-        for (int i = 0; i < Msudoku[fila][columna].getCandidatos().size(); i++) {
-            if(Msudoku[fila][columna].getCandidatos().get(i)==num)
+        for (int i = 0; i < MatrizS[fila][columna].getCandidatos().size(); i++) {
+            if(MatrizS[fila][columna].getCandidatos().get(i)==num)
                 return true;
         }
         return false;
@@ -3934,11 +3933,11 @@ public class Principal extends javax.swing.JFrame {
     public void eliminarCol(int num){
         ArrayList tem = null;
         for (int i =0; i < 9; i++) {
-            tem = Msudoku[i][columna].getCandidatos();
+            tem = MatrizS[i][columna].getCandidatos();
             for (int j = 0; j < tem.size(); j++) {
-                if(num == (int)tem.get(j) && !Msudoku[i][columna].isEncontrado()){
+                if(num == (int)tem.get(j) && !MatrizS[i][columna].isEncontrado()){
                      if(!crear)ir.add(new Ir(i, columna, num));
-                    Msudoku[i][columna].EliminarCandidato((Integer) tem.get(j));
+                    MatrizS[i][columna].EliminarCandidato((Integer) tem.get(j));
                     if(jcbmCandidato.isSelected())imprimirPosibilidades(i, columna);
                     break;
                 }
@@ -3948,11 +3947,11 @@ public class Principal extends javax.swing.JFrame {
     private void eliminarNumFil(int num){
         ArrayList tem = null;
         for (int i =0; i < 9; i++) {
-            tem = Msudoku[fila][i].getCandidatos();
+            tem = MatrizS[fila][i].getCandidatos();
             for (int j = 0; j < tem.size(); j++) {
-                if(num == (int)tem.get(j)&& !Msudoku[fila][i].isEncontrado()){
+                if(num == (int)tem.get(j)&& !MatrizS[fila][i].isEncontrado()){
                    if(!crear) ir.add(new Ir(fila, i, num));
-                   Msudoku[fila][i].EliminarCandidato( (Integer) tem.get(j));
+                   MatrizS[fila][i].EliminarCandidato( (Integer) tem.get(j));
                    if(jcbmCandidato.isSelected())imprimirPosibilidades(fila, i);
                    break;
                 }
@@ -3962,17 +3961,17 @@ public class Principal extends javax.swing.JFrame {
     private void eliminarCuadro(int num){
         for (int f = (fila/3)*3; f < (fila/3)*3+3; f++) {
             for (int c = (columna/3)*3; c < (columna/3)*3+3; c++) {
-                if(!Msudoku[f][c].isEncontrado()){
+                if(!MatrizS[f][c].isEncontrado()){
                     ArrayList<Integer>tem ;
-                    tem =Msudoku[f][c].getCandidatos();
+                    tem =MatrizS[f][c].getCandidatos();
                     for (int i = 0; i < tem.size(); i++) {
                         if(tem.get(i)== num){
                             if(!crear)ir.add(new Ir(f, c, num));
-                            Msudoku[f][c].EliminarCandidato( (Integer) tem.get(i));                        
+                            MatrizS[f][c].EliminarCandidato( (Integer) tem.get(i));                        
                             if(jcbmCandidato.isSelected()){
-                                Msudoku[f][c].getJtf().setText(null);
-                                for (int j = 0; j < Msudoku[f][c].getCandidatos().size(); j++) {                                   
-                                   Msudoku[f][c].getJtf().append(" "+ Msudoku[f][c].getCandidatos().get(j));
+                                MatrizS[f][c].getJtf().setText(null);
+                                for (int j = 0; j < MatrizS[f][c].getCandidatos().size(); j++) {                                   
+                                   MatrizS[f][c].getJtf().append(" "+ MatrizS[f][c].getCandidatos().get(j));
                                 }
                             }
                           break;
@@ -3983,11 +3982,11 @@ public class Principal extends javax.swing.JFrame {
         }
     }
     private void imprimirPosibilidades(int fil, int col){
-        if(!Msudoku[fil][col].isEncontrado())
-           Msudoku[fil][col].getJtf().setText(null);
-        for (int i = 0; i <   Msudoku[fil][col].getCandidatos().size(); i++) {
-            if(!Msudoku[fil][col].isEncontrado())
-                Msudoku[fil][col].getJtf().append(" "+Msudoku[fil][col].getCandidatos().get(i));
+        if(!MatrizS[fil][col].isEncontrado())
+           MatrizS[fil][col].getJtf().setText(null);
+        for (int i = 0; i <   MatrizS[fil][col].getCandidatos().size(); i++) {
+            if(!MatrizS[fil][col].isEncontrado())
+                MatrizS[fil][col].getJtf().append(" "+MatrizS[fil][col].getCandidatos().get(i));
         }
     }
     private void ordenar( ArrayList<Integer> array){
