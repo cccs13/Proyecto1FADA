@@ -2,13 +2,13 @@
 
 package Metodo.FadaEliminar;
 
-import Sudoku.FadaSudokuSecundario;
+import Sudoku.FadaSudoku;
 import java.util.ArrayList;
 
 
 public class FadaEliminarCandidatos {
     
-    public static void eliminarFila(int num, int fila, FadaSudokuSecundario m[][]){     
+    public static void eliminarFila(int num, int fila, FadaSudoku m[][]){     
         ArrayList tem = null;
         for (int c = 0; c < 9; c++) {
             tem = m[fila][c].getCandidatos();
@@ -20,7 +20,7 @@ public class FadaEliminarCandidatos {
             }
         }
     }
-   public static void eliminarColumna(int num, int columna, FadaSudokuSecundario m[][]){
+   public static void eliminarColumna(int num, int columna, FadaSudoku m[][]){
         ArrayList tem = null;
         for (int f =0; f < 9; f++) {
             tem = m[f][columna].getCandidatos();
@@ -32,7 +32,7 @@ public class FadaEliminarCandidatos {
             }
         }
    }
-    public static void eliminarRegion(int num, int fila,int columna, FadaSudokuSecundario m[][]){
+    public static void eliminarRegion(int num, int fila,int columna, FadaSudoku m[][]){
         for (int f = (fila/3)*3; f < (fila/3)*3+3; f++) {
             for (int c = (columna/3)*3; c < (columna/3)*3+3; c++) {
                 if(!m[f][c].isEncontrado()){

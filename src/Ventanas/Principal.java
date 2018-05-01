@@ -7,7 +7,7 @@ import Metodos.Crear.FadaCrearMatriz;
 import Metodos.FadaIR.Ir;
 import Metodos.Fada1.Fada1D;
 import Metodo.FadaEliminar.FadaEliminarCandidatos;
-import Sudoku.FadaSudokuSecundario;
+import Sudoku.FadaSudoku;
 //import Time.Cronometro;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import static javax.swing.JOptionPane.showConfirmDialog;
 
 
 public class Principal extends javax.swing.JFrame {     
-    public static FadaSudokuSecundario Msudoku[][] = new FadaSudokuSecundario[9][9];
+    public static FadaSudoku Msudoku[][] = new FadaSudoku[9][9];
     public static int celdaComplet;
     public  javax.swing.JTextArea aux = c1;
     //public static  Cronometro cronometro;
