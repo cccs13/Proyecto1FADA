@@ -3394,10 +3394,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        int s = showConfirmDialog(this,"¿Desea Salir del Sudoku?" );
-        if(s==0){
-            
-        }
+       
     }//GEN-LAST:event_formWindowClosing
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -3774,7 +3771,7 @@ public class Principal extends javax.swing.JFrame {
         }
         }
         else if(sudoku[fila][columna] == (Integer)Integer.parseInt(jMen.getName())){
-            info.setText("Movimiento invalido");
+            info.setText("");
         }
     } 
     private void jMenuItem2ActionPerformed2(java.awt.event.ActionEvent evt,JMenuItem jMen) {   
@@ -3796,12 +3793,12 @@ public class Principal extends javax.swing.JFrame {
             eliminarCuadro(Integer.parseInt(String.valueOf(jMen.getName())));
             if(celdaComplet == 81){ 
          
-                info.setText("FIN DE JUGO...");
+                info.setText("FIN DE JUGO");
                 info.setBackground(new Color(86,250,118));
             }  
         }
         else if(sudoku[fila][columna] != Integer.parseInt(String.valueOf(String.valueOf(jMen.getName())))){
-               info.setText("Movimiento Invalido");
+               info.setText("");
             }
     } 
      private void jMenuItem2ActionPerformed3(java.awt.event.ActionEvent evt,JMenuItem jMen) {
@@ -3861,7 +3858,7 @@ public class Principal extends javax.swing.JFrame {
            }                  
            for (int i = 0; i < MatrizS[fila][columna].getCandidatos().size(); i++) {
                jMenuItem2 = new JMenuItem();
-               jMenuItem2.setText("Fijar  "+MatrizS[fila][columna].getCandidatos().get(i));
+               jMenuItem2.setText("Fijar "+MatrizS[fila][columna].getCandidatos().get(i));
                addEvento2(jMenuItem2);
                jPopupMenu1.add(jMenuItem2);
                jMenuItem2.setName(""+MatrizS[fila][columna].getCandidatos().get(i));
@@ -3897,12 +3894,12 @@ public class Principal extends javax.swing.JFrame {
                 eliminarCuadro(Integer.parseInt(String.valueOf(c)));
                 if(celdaComplet == 81){ 
        
-                    info.setText("FIN DE JUEGO...");
+                    info.setText("FIN DE JUEGO");
                     info.setBackground(new Color(86,250,118));
                 }
               }
             if(sudoku[fila][columna] != Integer.parseInt(String.valueOf(c))){
-               info.setText("Movimiento Invalido");
+               info.setText("");
             }
         }
     }
