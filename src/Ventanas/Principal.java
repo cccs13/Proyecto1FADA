@@ -3395,7 +3395,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        int s = showConfirmDialog(this,"Desea Salir.. ?" );
+        int s = showConfirmDialog(this,"¿Desea Salir del Sudoku?" );
         if(s==0){
             
         }
@@ -3514,7 +3514,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         int s = 0;
-        if(celdaComplet < 81) s = showConfirmDialog(this,"Desea Salir De la partida.. ?" );
+        if(celdaComplet < 81) s = showConfirmDialog(this,"¿Desea Salir De la partida?" );
         if(s==0){
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
@@ -3750,9 +3750,7 @@ public class Principal extends javax.swing.JFrame {
         }catch(Exception e){
             crearNuevoJuego();
         }
-          System.out.println("fin");
-      
-      
+       
     }
     void colorCuadro(javax.swing.JTextArea cc){
         if(celdaComplet < 81){
