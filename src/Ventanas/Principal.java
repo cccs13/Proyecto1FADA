@@ -6,7 +6,7 @@ import Metodos.Crear.FadaCandidatos;
 import Metodos.Crear.FadaCrearMatriz;
 import Metodos.FadaIR.Ir;
 import Metodos.Fada1.Fada1D;
-import Metods.Eliminar.FadaEliminarCandidatos;
+import Metodo.FadaEliminar.FadaEliminarCandidatos;
 import Sudoku.FadaSudokuSecundario;
 import Time.Cronometro;
 import java.awt.Color;
