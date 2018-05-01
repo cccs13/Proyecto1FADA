@@ -2,7 +2,6 @@
 package Metodos.Fada4;
 
 import Metodos.Fada1.Fada1D;
-import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.candi;
 import static Ventanas.Principal.dificil;
 import static Ventanas.Principal.info;
@@ -10,6 +9,7 @@ import static Ventanas.Principal.jcbmCandidato;
 import static Ventanas.Principal.pista;
 import java.awt.Color;
 import java.util.ArrayList;
+import static Ventanas.Principal.MatrizS;
 
 
 public class FadaCDF4 {
@@ -28,11 +28,11 @@ public class FadaCDF4 {
     private void buscarCuartetos(int fila){
                 
         for (int col = 0; col < 9; col++) {
-            tem = Msudoku[fila][col].getCandidatos();
-            if(!Msudoku[fila][col].isEncontrado() && tem.size()==4){  
+            tem = MatrizS[fila][col].getCandidatos();
+            if(!MatrizS[fila][col].isEncontrado() && tem.size()==4){  
                 beses=1;
                 quitareliminar(fila);
-                Msudoku[fila][col].setElimianr(false);
+                MatrizS[fila][col].setElimianr(false);
                 existeCuartetos(fila, col);
                 if(beses==4){
                     eliminarCandidatos(fila);
@@ -46,9 +46,9 @@ public class FadaCDF4 {
      void existeCuartetos(int fila, int col){
         for (int columna = 0; columna < 9; columna++) {
           if(columna != col){
-              if(!Msudoku[fila][columna].isEncontrado() && Msudoku[fila][columna].getCandidatos().size()<5 ){
-                  if(iguales(Msudoku[fila][columna].getCandidatos())){
-                        Msudoku[fila][columna].setElimianr(false);
+              if(!MatrizS[fila][columna].isEncontrado() && MatrizS[fila][columna].getCandidatos().size()<5 ){
+                  if(iguales(MatrizS[fila][columna].getCandidatos())){
+                        MatrizS[fila][columna].setElimianr(false);
                         beses++; 
                     }
                 }
@@ -71,32 +71,32 @@ public class FadaCDF4 {
     }
    void quitareliminar(int fila){
         for (int col = 0; col < 9; col++) {
-             Msudoku[fila][col].setElimianr(true);
+             MatrizS[fila][col].setElimianr(true);
         }
     } 
    void eliminarCandidatos(int fila){
         boolean pintar=false;
         for (int columna = 0; columna < 9; columna++) {
-            if(Msudoku[fila][columna].isElimianr() && !Msudoku[fila][columna].isEncontrado()) {
-                ArrayList<Integer>aux =  Msudoku[fila][columna].getCandidatos();
+            if(MatrizS[fila][columna].isElimianr() && !MatrizS[fila][columna].isEncontrado()) {
+                ArrayList<Integer>aux =  MatrizS[fila][columna].getCandidatos();
                 for (int i = 0; i < tem.size(); i++) {            
                     for (int j = 0; j < aux.size(); j++) {
                         if(tem.get(i) == aux.get(j)){
                             salir=true;
                             if(!pista){
-                                Msudoku[fila][columna].EliminarCandidato(aux.get(j));
+                                MatrizS[fila][columna].EliminarCandidato(aux.get(j));
                                 j--;
                                 dificil=true;
                                 if(jcbmCandidato.isSelected()){
-                                    Msudoku[fila][columna].getJtf().setText(null);
-                                    for (int h = 0; h < Msudoku[fila][columna].getCandidatos().size(); h++) {
-                                        Msudoku[fila][columna].getJtf().append(" "+ Msudoku[fila][columna].getCandidatos().get(h));
+                                    MatrizS[fila][columna].getJtf().setText(null);
+                                    for (int h = 0; h < MatrizS[fila][columna].getCandidatos().size(); h++) {
+                                        MatrizS[fila][columna].getJtf().append(" "+ MatrizS[fila][columna].getCandidatos().get(h));
                                      }
                                 }    
                             }
                             else{
-                                Msudoku[fila][columna].getJtf().setBackground(new Color(253,253,174)); 
-                                Msudoku[fila][columna].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(Color.GREEN,2));
+                                MatrizS[fila][columna].getJtf().setBackground(new Color(253,253,174)); 
+                                MatrizS[fila][columna].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(Color.GREEN,2));
                                 pintar =true;
                                 i=9;
                                 break;
@@ -114,8 +114,8 @@ public class FadaCDF4 {
     }  
    private void pintar(int fila){
         for (int c = 0; c < 9; c++) {         
-            if(!Msudoku[fila][c].isEncontrado() && !Msudoku[fila][c].isElimianr()){
-                Msudoku[fila][c].getJtf().setBackground(new Color(69,196,84));
+            if(!MatrizS[fila][c].isEncontrado() && !MatrizS[fila][c].isElimianr()){
+                MatrizS[fila][c].getJtf().setBackground(new Color(69,196,84));
             } 
         }   
     }

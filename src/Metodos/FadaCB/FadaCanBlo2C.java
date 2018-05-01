@@ -3,13 +3,13 @@
 package Metodos.FadaCB;
 
 import Metodos.Fada1.Fada1D;
-import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.candi;
 import static Ventanas.Principal.info;
 import static Ventanas.Principal.jcbmCandidato;
 import static Ventanas.Principal.pista;
 import java.awt.Color;
 import java.util.ArrayList;
+import static Ventanas.Principal.MatrizS;
 
 
 public class FadaCanBlo2C {
@@ -25,10 +25,10 @@ public class FadaCanBlo2C {
     }
     public void buscarCandidatos(int columna){
         for (int fila = 0; fila < 9; fila++) {
-            if(!Msudoku[fila][columna].isEncontrado()){
-                for (int i = 0; i < Msudoku[fila][columna].getCandidatos().size(); i++) {
-                    if(!serrepiteNumero(fila, columna,  Msudoku[fila][columna].getCandidatos().get(i))){
-                       eliminar(fila, columna, Msudoku[fila][columna].getCandidatos().get(i));
+            if(!MatrizS[fila][columna].isEncontrado()){
+                for (int i = 0; i < MatrizS[fila][columna].getCandidatos().size(); i++) {
+                    if(!serrepiteNumero(fila, columna,  MatrizS[fila][columna].getCandidatos().get(i))){
+                       eliminar(fila, columna, MatrizS[fila][columna].getCandidatos().get(i));
                        if(salir){
                           fila=9;
                           break;
@@ -42,8 +42,8 @@ public class FadaCanBlo2C {
         int tem =(int)fila/3;
         for (int fil = 0; fil < 9; fil++) {
             if(fil<tem*3 ||fil>tem*3+2){
-                for (int i = 0; i < Msudoku[fil][columna].getCandidatos().size(); i++) {
-                    if(Msudoku[fil][columna].getCandidatos().get(i)== num){
+                for (int i = 0; i < MatrizS[fil][columna].getCandidatos().size(); i++) {
+                    if(MatrizS[fil][columna].getCandidatos().get(i)== num){
                         return true;
                     }
                 }
@@ -55,18 +55,18 @@ public class FadaCanBlo2C {
         boolean pintar=false;
         for (int fil = ((int)fila/3)*3; fil <((int)fila/3)*3+3; fil++) {
             for (int col = ((int)columna/3)*3; col <((int)columna/3)*3+3; col++){
-                if(!Msudoku[fil][col].isEncontrado() && fil !=fila){
-                    for (int i = 0; i < Msudoku[fil][col].getCandidatos().size(); i++) {
-                        if(Msudoku[fil][col].getCandidatos().get(i)==num && col!=columna){
+                if(!MatrizS[fil][col].isEncontrado() && fil !=fila){
+                    for (int i = 0; i < MatrizS[fil][col].getCandidatos().size(); i++) {
+                        if(MatrizS[fil][col].getCandidatos().get(i)==num && col!=columna){
                             if(!pista){
 //                                Ventanas.Principal.dificil=true;
-                               Msudoku[fil][col].EliminarCandidato((Integer)num);
+                               MatrizS[fil][col].EliminarCandidato((Integer)num);
                                if(jcbmCandidato.isSelected())
                                     imprimirPosibilidades(fil, col);
                             }
                             else{
-                                Msudoku[fil][col].getJtf().setBackground(new Color(253,253,174)); 
-                                Msudoku[fila][col].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(Color.GREEN,2));
+                                MatrizS[fil][col].getJtf().setBackground(new Color(253,253,174)); 
+                                MatrizS[fila][col].getJtf().setBorder(javax.swing.BorderFactory.createLineBorder(Color.GREEN,2));
                                 pintar=true;                                
                             }
                             
@@ -85,15 +85,15 @@ public class FadaCanBlo2C {
     }
     void colorPista(int columna){
         for (int i = 0; i < 9; i++) {
-            Msudoku[i][columna].getJtf().setBackground(new Color(69,196,84));
+            MatrizS[i][columna].getJtf().setBackground(new Color(69,196,84));
         }
     }
     public void imprimirPosibilidades(int fil, int col){
-        if(!Msudoku[fil][col].isEncontrado())
-            Msudoku[fil][col].getJtf().setText(null);
-        for (int i = 0; i <   Msudoku[fil][col].getCandidatos().size(); i++) {
-            if(!Msudoku[fil][col].isEncontrado())
-                Msudoku[fil][col].getJtf().append(" "+Msudoku[fil][col].getCandidatos().get(i));
+        if(!MatrizS[fil][col].isEncontrado())
+            MatrizS[fil][col].getJtf().setText(null);
+        for (int i = 0; i <   MatrizS[fil][col].getCandidatos().size(); i++) {
+            if(!MatrizS[fil][col].isEncontrado())
+                MatrizS[fil][col].getJtf().append(" "+MatrizS[fil][col].getCandidatos().get(i));
         }
     } 
 }
