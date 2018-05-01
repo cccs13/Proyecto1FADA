@@ -5,7 +5,6 @@ package Metodos.Fada1;
 
 import static Ventanas.Principal.Msudoku;
 import static Ventanas.Principal.celdaComplet;
-import static Ventanas.Principal.cronometro;
 import static Ventanas.Principal.info;
 import static Ventanas.Principal.jLabel2;
 import static Ventanas.Principal.jcbmCandidato;
@@ -53,7 +52,7 @@ public class Fada1D {
         jLabel2.setText("Celdas Completadas "+celdaComplet);
         if(celdaComplet < 81 && !tem) new Fada1O().buscarSencilloOculto();
         else if(celdaComplet == 81){ 
-            cronometro.suspender();
+
             info.setText("FIN DE JUEGO...");
             info.setBackground(new Color(86,250,118));
         }

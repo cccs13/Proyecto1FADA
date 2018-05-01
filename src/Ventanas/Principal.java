@@ -8,7 +8,7 @@ import Metodos.FadaIR.Ir;
 import Metodos.Fada1.Fada1D;
 import Metodo.FadaEliminar.FadaEliminarCandidatos;
 import Sudoku.FadaSudokuSecundario;
-import Time.Cronometro;
+//import Time.Cronometro;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JMenuItem;
@@ -21,7 +21,7 @@ public class Principal extends javax.swing.JFrame {
     public static FadaSudokuSecundario Msudoku[][] = new FadaSudokuSecundario[9][9];
     public static int celdaComplet;
     public  javax.swing.JTextArea aux = c1;
-    public static  Cronometro cronometro;
+    //public static  Cronometro cronometro;
     public static boolean pista = false;    
     public static boolean nevoJuego = false;
     private int fila;
@@ -48,7 +48,7 @@ public class Principal extends javax.swing.JFrame {
         
                     
         aux = c1;
-        cronometro = new Cronometro(jlCronometro);
+       // cronometro = new Cronometro(jlCronometro);
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/uni.png")).getImage());
         jDialog1.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/uni.png")).getImage());
         jDialog2.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/uni.png")).getImage());
@@ -95,7 +95,6 @@ public class Principal extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JSeparator();
         info = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jlCronometro = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -461,19 +460,12 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(260, 510, 120, 20);
 
-        jlCronometro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jlCronometro.setText(" 0:0:0");
-        jlCronometro.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jlCronometro.setOpaque(true);
-        getContentPane().add(jlCronometro);
-        jlCronometro.setBounds(380, 510, 70, 20);
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel3.setText("Difícil");
         jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         jLabel3.setOpaque(true);
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(450, 510, 60, 20);
+        jLabel3.setBounds(380, 510, 130, 20);
 
         jPanel13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel13.setName(""); // NOI18N
@@ -3425,15 +3417,15 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_c5MouseExited
 
     private void formWindowDeactivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowDeactivated
-     cronometro.suspender();  // TODO add your handling code here:
+//     cronometro.suspender();  // TODO add your handling code here:
     }//GEN-LAST:event_formWindowDeactivated
 
     private void formWindowDeiconified(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowDeiconified
-     cronometro.resumen();   // TODO add your handling code here:
+ //    cronometro.resumen();   // TODO add your handling code here:
     }//GEN-LAST:event_formWindowDeiconified
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-    cronometro.resumen();
+ //   cronometro.resumen();
     }//GEN-LAST:event_formWindowActivated
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -3750,10 +3742,7 @@ public class Principal extends javax.swing.JFrame {
              jLabel2.setText("Celdas completadas "+celdaComplet);
              info.setBackground(new Color(240,240,240));
              info.setText(null);
-             cronometro.setMinutos(0);
-             cronometro.setHora(0);
-             cronometro.setSegundos(0);
-             cronometro.resumen();
+
              if(dificil) jLabel3.setText("Dificil");
              else jLabel3.setText("Normal");
              new FadaCandidatos().PosibiDisp();
@@ -3809,7 +3798,7 @@ public class Principal extends javax.swing.JFrame {
             eliminarNumFil(Integer.parseInt(String.valueOf(jMen.getName())));
             eliminarCuadro(Integer.parseInt(String.valueOf(jMen.getName())));
             if(celdaComplet == 81){ 
-                cronometro.suspender();
+         
                 info.setText("FIN DE JUGO...");
                 info.setBackground(new Color(86,250,118));
             }  
@@ -3910,7 +3899,7 @@ public class Principal extends javax.swing.JFrame {
                 eliminarNumFil(Integer.parseInt(String.valueOf(c)));
                 eliminarCuadro(Integer.parseInt(String.valueOf(c)));
                 if(celdaComplet == 81){ 
-                    cronometro.suspender();
+       
                     info.setText("FIN DE JUEGO...");
                     info.setBackground(new Color(86,250,118));
                 }
@@ -4185,7 +4174,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jbDeshacer;
     private javax.swing.JButton jbRehacer;
     public static javax.swing.JCheckBoxMenuItem jcbmCandidato;
-    public static javax.swing.JLabel jlCronometro;
     private javax.swing.JMenuItem jmiDeshacer;
     private javax.swing.JMenuItem jmiRehacer;
     // End of variables declaration//GEN-END:variables
