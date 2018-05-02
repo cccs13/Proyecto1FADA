@@ -80,16 +80,7 @@ public class Principal extends javax.swing.JFrame {
         jbRehacer = new javax.swing.JButton();
         jbDeshacer = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
-        jButton6 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        BotonPistas = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         info = new javax.swing.JLabel();
@@ -330,115 +321,16 @@ public class Principal extends javax.swing.JFrame {
         jPanel11.add(jSeparator4);
         jSeparator4.setBounds(10, 380, 75, 10);
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton6.setText("1");
-        jButton6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        BotonPistas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/78.png"))); // NOI18N
+        BotonPistas.setToolTipText("Pista");
+        BotonPistas.setContentAreaFilled(false);
+        BotonPistas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                BotonPistasActionPerformed(evt);
             }
         });
-        jPanel11.add(jButton6);
-        jButton6.setBounds(10, 200, 30, 30);
-
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton9.setText("2");
-        jButton9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        jPanel11.add(jButton9);
-        jButton9.setBounds(50, 200, 30, 30);
-
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton10.setText("3");
-        jButton10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        jPanel11.add(jButton10);
-        jButton10.setBounds(10, 230, 30, 30);
-
-        jButton11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton11.setText("4");
-        jButton11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        jPanel11.add(jButton11);
-        jButton11.setBounds(50, 230, 30, 30);
-
-        jButton12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton12.setText("6");
-        jButton12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-        jPanel11.add(jButton12);
-        jButton12.setBounds(50, 260, 30, 30);
-
-        jButton13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton13.setText("7");
-        jButton13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-        jPanel11.add(jButton13);
-        jButton13.setBounds(10, 290, 30, 30);
-
-        jButton14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton14.setText("8");
-        jButton14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-        jPanel11.add(jButton14);
-        jButton14.setBounds(50, 290, 30, 30);
-
-        jButton15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton15.setText("5");
-        jButton15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-        jPanel11.add(jButton15);
-        jButton15.setBounds(10, 260, 30, 30);
-
-        jButton16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton16.setText("9");
-        jButton16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
-        jPanel11.add(jButton16);
-        jButton16.setBounds(30, 320, 30, 30);
-
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/78.png"))); // NOI18N
-        jButton5.setToolTipText("Pista");
-        jButton5.setContentAreaFilled(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanel11.add(jButton5);
-        jButton5.setBounds(30, 60, 30, 29);
+        jPanel11.add(BotonPistas);
+        BotonPistas.setBounds(30, 60, 30, 29);
         jPanel11.add(jSeparator6);
         jSeparator6.setBounds(10, 50, 75, 10);
         jPanel11.add(jSeparator7);
@@ -3462,45 +3354,9 @@ public class Principal extends javax.swing.JFrame {
       rehacer();  // TODO add your handling code here:
     }//GEN-LAST:event_jmiRehacerActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        filtros(4);   // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       filtros(1);
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        filtros(2);  // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        filtros(3);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        filtros(5);  // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        filtros(6);  // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
-
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        filtros(7);  // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        filtros(8);   // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        filtros(9);  // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void BotonPistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPistasActionPerformed
         if(celdaComplet<81){
-             pista=true; 
+            pista=true; 
             info.setBackground(new Color(240,240,240));
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
@@ -3513,7 +3369,7 @@ public class Principal extends javax.swing.JFrame {
             new Fada1D().buscarSencillo();
             pista=false;  // TODO add your handling code here:
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_BotonPistasActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         int s = 0;
@@ -3532,7 +3388,7 @@ public class Principal extends javax.swing.JFrame {
             crear = true;
             new FadaCandidatos().PosibiDisp();
             celdaComplet=0;
-            jButton5.setEnabled(false);
+            BotonPistas.setEnabled(false);
             volverA.clear();
             pibote=0;
             jbDeshacer.setEnabled(false);
@@ -3557,7 +3413,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    private void filtros(int num){
+    /*private void filtros(int num){
         
         for (int f = 0; f < 9; f++) {
             for (int c = 0; c < 9; c++) {
@@ -3576,7 +3432,7 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         }          
-    }
+    }*/
     private void deshacer(){
         if(!crear){
             Ir tem = volverA.get(pibote-1);
@@ -4045,6 +3901,7 @@ public class Principal extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonPistas;
     public static javax.swing.JTextArea c1;
     public static javax.swing.JTextArea c10;
     public static javax.swing.JTextArea c11;
@@ -4129,19 +3986,9 @@ public class Principal extends javax.swing.JFrame {
     public static javax.swing.JLabel candi;
     public static javax.swing.JLabel info;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
