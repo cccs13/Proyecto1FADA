@@ -20,7 +20,6 @@ public class Principal extends javax.swing.JFrame {
     public static FadaSudoku[][] MatrizS = new FadaSudoku[9][9];
     public static int celdaComplet;
     public  javax.swing.JTextArea aux = c1;
-    //public static  Cronometro cronometro;
     public static boolean pista = false;    
     public static boolean nevoJuego = false;
     private int fila;
@@ -178,18 +177,18 @@ public class Principal extends javax.swing.JFrame {
         c70 = new javax.swing.JTextArea();
         c61 = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu = new javax.swing.JMenu();
+        ArchivoFile = new javax.swing.JMenu();
+        NuevoJuego = new javax.swing.JMenuItem();
+        CrearJuego = new javax.swing.JMenuItem();
+        Opciones = new javax.swing.JMenu();
         jmiDeshacer = new javax.swing.JMenuItem();
         jmiRehacer = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        Ver = new javax.swing.JMenu();
         jcbmCandidato = new javax.swing.JCheckBoxMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        ResolverSudoku = new javax.swing.JMenuItem();
+        Historial = new javax.swing.JMenu();
+        HistoRehacer = new javax.swing.JMenuItem();
+        HistoDeshacer = new javax.swing.JMenuItem();
 
         jMenuItem8.setText("jMenuItem8");
 
@@ -2118,30 +2117,30 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jPanel13);
         jPanel13.setBounds(100, 0, 500, 500);
 
-        jMenu1.setText("File");
-        jMenu1.setContentAreaFilled(false);
+        ArchivoFile.setText("File");
+        ArchivoFile.setContentAreaFilled(false);
 
-        jMenuItem3.setText("Nuevo Juego");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        NuevoJuego.setText("Nuevo Juego");
+        NuevoJuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                NuevoJuegoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        ArchivoFile.add(NuevoJuego);
 
-        jMenuItem4.setText("Crear Juego");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        CrearJuego.setText("Crear Juego");
+        CrearJuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                CrearJuegoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        ArchivoFile.add(CrearJuego);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(ArchivoFile);
 
-        jMenu.setText("Opciones");
-        jMenu.setDoubleBuffered(true);
-        jMenu.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        Opciones.setText("Opciones");
+        Opciones.setDoubleBuffered(true);
+        Opciones.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         jmiDeshacer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
         jmiDeshacer.setText("Deshsacer");
@@ -2151,7 +2150,7 @@ public class Principal extends javax.swing.JFrame {
                 jmiDeshacerActionPerformed(evt);
             }
         });
-        jMenu.add(jmiDeshacer);
+        Opciones.add(jmiDeshacer);
 
         jmiRehacer.setText("Rehacer");
         jmiRehacer.setEnabled(false);
@@ -2160,11 +2159,11 @@ public class Principal extends javax.swing.JFrame {
                 jmiRehacerActionPerformed(evt);
             }
         });
-        jMenu.add(jmiRehacer);
+        Opciones.add(jmiRehacer);
 
-        jMenuBar1.add(jMenu);
+        jMenuBar1.add(Opciones);
 
-        jMenu4.setText("Ver");
+        Ver.setText("Ver");
 
         jcbmCandidato.setSelected(true);
         jcbmCandidato.setText("Mostar Candidatos");
@@ -2173,28 +2172,28 @@ public class Principal extends javax.swing.JFrame {
                 jcbmCandidatoActionPerformed(evt);
             }
         });
-        jMenu4.add(jcbmCandidato);
+        Ver.add(jcbmCandidato);
 
-        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/armar.png"))); // NOI18N
-        jMenuItem6.setText("Resolver este sudoku");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        ResolverSudoku.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/armar.png"))); // NOI18N
+        ResolverSudoku.setText("Resolver este sudoku");
+        ResolverSudoku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                ResolverSudokuActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem6);
+        Ver.add(ResolverSudoku);
 
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(Ver);
 
-        jMenu2.setText("Historial");
+        Historial.setText("Historial");
 
-        jMenuItem1.setText("Historial Rehacer");
-        jMenu2.add(jMenuItem1);
+        HistoRehacer.setText("Historial Rehacer");
+        Historial.add(HistoRehacer);
 
-        jMenuItem5.setText("Historial Deshacer");
-        jMenu2.add(jMenuItem5);
+        HistoDeshacer.setText("Historial Deshacer");
+        Historial.add(HistoDeshacer);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(Historial);
 
         setJMenuBar(jMenuBar1);
 
@@ -3321,10 +3320,10 @@ public class Principal extends javax.swing.JFrame {
  //   cronometro.resumen();
     }//GEN-LAST:event_formWindowActivated
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void ResolverSudokuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResolverSudokuActionPerformed
         new Fada1D().buscarSencillo(); // TODO add your handling code here:
         
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_ResolverSudokuActionPerformed
 
     private void jbRehacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRehacerActionPerformed
        rehacer();
@@ -3369,7 +3368,7 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BotonPistasActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void CrearJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearJuegoActionPerformed
         int s = 0;
         if(celdaComplet < 81) s = showConfirmDialog(this,"¿Desea Salir De la partida?" );
         if(s==0){
@@ -3394,9 +3393,9 @@ public class Principal extends javax.swing.JFrame {
             jmiDeshacer.setEnabled(false);
             jmiRehacer.setEnabled(false);
         }
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_CrearJuegoActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void NuevoJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoJuegoActionPerformed
         info.setText("Esto puede tardar un poco");
         dificil=false;
         crearNuevoJuego();
@@ -3405,7 +3404,7 @@ public class Principal extends javax.swing.JFrame {
         jbDeshacer.setEnabled(false);
         jbRehacer.setEnabled(false);
 
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_NuevoJuegoActionPerformed
     
     
     /**
@@ -3899,7 +3898,16 @@ public class Principal extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu ArchivoFile;
     private javax.swing.JButton BotonPistas;
+    private javax.swing.JMenuItem CrearJuego;
+    private javax.swing.JMenuItem HistoDeshacer;
+    private javax.swing.JMenuItem HistoRehacer;
+    private javax.swing.JMenu Historial;
+    private javax.swing.JMenuItem NuevoJuego;
+    private javax.swing.JMenu Opciones;
+    private javax.swing.JMenuItem ResolverSudoku;
+    private javax.swing.JMenu Ver;
     public static javax.swing.JTextArea c1;
     public static javax.swing.JTextArea c10;
     public static javax.swing.JTextArea c11;
@@ -3994,17 +4002,8 @@ public class Principal extends javax.swing.JFrame {
     public static javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JMenu jMenu;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
