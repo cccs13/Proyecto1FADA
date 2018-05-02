@@ -191,15 +191,15 @@ public class Principal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu = new javax.swing.JMenu();
-        jSeparator5 = new javax.swing.JPopupMenu.Separator();
         jmiDeshacer = new javax.swing.JMenuItem();
         jmiRehacer = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jcbmCandidato = new javax.swing.JCheckBoxMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
 
         jMenuItem8.setText("jMenuItem8");
 
@@ -2246,15 +2246,12 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem4);
-        jMenu1.add(jSeparator1);
-        jMenu1.add(jSeparator3);
 
         jMenuBar1.add(jMenu1);
 
         jMenu.setText("Opciones");
         jMenu.setDoubleBuffered(true);
         jMenu.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jMenu.add(jSeparator5);
 
         jmiDeshacer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
         jmiDeshacer.setText("Deshsacer");
@@ -2298,6 +2295,16 @@ public class Principal extends javax.swing.JFrame {
         jMenu4.add(jMenuItem6);
 
         jMenuBar1.add(jMenu4);
+
+        jMenu2.setText("Historial");
+
+        jMenuItem1.setText("Historial Rehacer");
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem5.setText("Historial Deshacer");
+        jMenu2.add(jMenuItem5);
+
+        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -3632,7 +3639,7 @@ public class Principal extends javax.swing.JFrame {
                 MatrizS[f][c].getJtf().setBackground(color2); 
                 
  //////////////////////////////////////////////////////////////////////////////////////               
-         JOptionPane.showMessageDialog(null, MatrizS[f][c].getJtf());
+  //       JOptionPane.showMessageDialog(null, MatrizS[f][c].getJtf());
          
 //////////////////////////////////////////////////////////////////////////////
 
@@ -4144,11 +4151,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPanel1;
@@ -4164,11 +4174,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
-    private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JButton jbDeshacer;
