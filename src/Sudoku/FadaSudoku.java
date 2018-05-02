@@ -2,7 +2,6 @@
 
 package Sudoku;
 
-import java.awt.TextArea;
 import java.util.ArrayList;
 import javax.swing.JTextArea;
 
