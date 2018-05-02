@@ -79,7 +79,6 @@ public class Principal extends javax.swing.JFrame {
         candi = new javax.swing.JLabel();
         jbRehacer = new javax.swing.JButton();
         jbDeshacer = new javax.swing.JButton();
-        jSeparator4 = new javax.swing.JSeparator();
         BotonPistas = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
@@ -265,6 +264,7 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ProyectoFADA");
+        setBackground(new java.awt.Color(153, 255, 153));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -293,7 +293,7 @@ public class Principal extends javax.swing.JFrame {
         candi.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         candi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel11.add(candi);
-        candi.setBounds(30, 110, 40, 40);
+        candi.setBounds(30, 120, 40, 40);
 
         jbRehacer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iraa.png"))); // NOI18N
         jbRehacer.setToolTipText("Rehacer (Ctrl +Y)");
@@ -318,10 +318,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel11.add(jbDeshacer);
         jbDeshacer.setBounds(10, 10, 30, 29);
-        jPanel11.add(jSeparator4);
-        jSeparator4.setBounds(10, 380, 75, 10);
 
-        BotonPistas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/78.png"))); // NOI18N
+        BotonPistas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ayuda.png"))); // NOI18N
         BotonPistas.setToolTipText("Pista");
         BotonPistas.setContentAreaFilled(false);
         BotonPistas.addActionListener(new java.awt.event.ActionListener() {
@@ -330,14 +328,14 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel11.add(BotonPistas);
-        BotonPistas.setBounds(30, 60, 30, 29);
+        BotonPistas.setBounds(30, 60, 30, 33);
         jPanel11.add(jSeparator6);
         jSeparator6.setBounds(10, 50, 75, 10);
         jPanel11.add(jSeparator7);
         jSeparator7.setBounds(10, 180, 75, 10);
 
         getContentPane().add(jPanel11);
-        jPanel11.setBounds(0, 0, 100, 500);
+        jPanel11.setBounds(0, 130, 100, 190);
 
         info.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         info.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
@@ -4022,7 +4020,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JButton jbDeshacer;
