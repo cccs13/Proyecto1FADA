@@ -77,8 +77,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         candi = new javax.swing.JLabel();
-        jbRehacer = new javax.swing.JButton();
-        jbDeshacer = new javax.swing.JButton();
+        Rehacer = new javax.swing.JButton();
+        Deshacer = new javax.swing.JButton();
         BotonPistas = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
@@ -179,17 +179,17 @@ public class Principal extends javax.swing.JFrame {
         c61 = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        OpcionNuevoJuego = new javax.swing.JMenuItem();
+        OpcionCrearJuego = new javax.swing.JMenuItem();
         jMenu = new javax.swing.JMenu();
         jmiDeshacer = new javax.swing.JMenuItem();
         jmiRehacer = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jcbmCandidato = new javax.swing.JCheckBoxMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        OpcionResolverSudoku = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        OpcionHistorialRehacer = new javax.swing.JMenuItem();
+        OpcionHistorialDeshacer = new javax.swing.JMenuItem();
 
         jMenuItem8.setText("jMenuItem8");
 
@@ -214,6 +214,11 @@ public class Principal extends javax.swing.JFrame {
         jDialog1.getContentPane().add(jColorChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 590, 320));
 
         jButton1.setText("Cancelar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jDialog1.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 400, 90, 30));
 
         jButton4.setText("Ok");
@@ -295,29 +300,29 @@ public class Principal extends javax.swing.JFrame {
         jPanel11.add(candi);
         candi.setBounds(30, 120, 40, 40);
 
-        jbRehacer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iraa.png"))); // NOI18N
-        jbRehacer.setToolTipText("Rehacer (Ctrl +Y)");
-        jbRehacer.setContentAreaFilled(false);
-        jbRehacer.setEnabled(false);
-        jbRehacer.addActionListener(new java.awt.event.ActionListener() {
+        Rehacer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iraa.png"))); // NOI18N
+        Rehacer.setToolTipText("Rehacer (Ctrl +Y)");
+        Rehacer.setContentAreaFilled(false);
+        Rehacer.setEnabled(false);
+        Rehacer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbRehacerActionPerformed(evt);
+                RehacerActionPerformed(evt);
             }
         });
-        jPanel11.add(jbRehacer);
-        jbRehacer.setBounds(50, 10, 30, 29);
+        jPanel11.add(Rehacer);
+        Rehacer.setBounds(50, 10, 30, 29);
 
-        jbDeshacer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iraa_2.png"))); // NOI18N
-        jbDeshacer.setToolTipText("Deshacer (Ctrl + Z)");
-        jbDeshacer.setContentAreaFilled(false);
-        jbDeshacer.setEnabled(false);
-        jbDeshacer.addActionListener(new java.awt.event.ActionListener() {
+        Deshacer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iraa_2.png"))); // NOI18N
+        Deshacer.setToolTipText("Deshacer (Ctrl + Z)");
+        Deshacer.setContentAreaFilled(false);
+        Deshacer.setEnabled(false);
+        Deshacer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbDeshacerActionPerformed(evt);
+                DeshacerActionPerformed(evt);
             }
         });
-        jPanel11.add(jbDeshacer);
-        jbDeshacer.setBounds(10, 10, 30, 29);
+        jPanel11.add(Deshacer);
+        Deshacer.setBounds(10, 10, 30, 29);
 
         BotonPistas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ayuda.png"))); // NOI18N
         BotonPistas.setToolTipText("Pista");
@@ -2121,21 +2126,21 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.setText("File");
         jMenu1.setContentAreaFilled(false);
 
-        jMenuItem3.setText("Nuevo Juego");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        OpcionNuevoJuego.setText("Nuevo Juego");
+        OpcionNuevoJuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                OpcionNuevoJuegoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(OpcionNuevoJuego);
 
-        jMenuItem4.setText("Crear Juego");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        OpcionCrearJuego.setText("Crear Juego");
+        OpcionCrearJuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                OpcionCrearJuegoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        jMenu1.add(OpcionCrearJuego);
 
         jMenuBar1.add(jMenu1);
 
@@ -2175,24 +2180,24 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu4.add(jcbmCandidato);
 
-        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/armar.png"))); // NOI18N
-        jMenuItem6.setText("Resolver este sudoku");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        OpcionResolverSudoku.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/armar.png"))); // NOI18N
+        OpcionResolverSudoku.setText("Resolver este sudoku");
+        OpcionResolverSudoku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                OpcionResolverSudokuActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem6);
+        jMenu4.add(OpcionResolverSudoku);
 
         jMenuBar1.add(jMenu4);
 
         jMenu2.setText("Historial");
 
-        jMenuItem1.setText("Historial Rehacer");
-        jMenu2.add(jMenuItem1);
+        OpcionHistorialRehacer.setText("Historial Rehacer");
+        jMenu2.add(OpcionHistorialRehacer);
 
-        jMenuItem5.setText("Historial Deshacer");
-        jMenu2.add(jMenuItem5);
+        OpcionHistorialDeshacer.setText("Historial Deshacer");
+        jMenu2.add(OpcionHistorialDeshacer);
 
         jMenuBar1.add(jMenu2);
 
@@ -2527,7 +2532,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_c61KeyTyped
 
     private void jcbmCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbmCandidatoActionPerformed
-        if(!jcbmCandidato.isSelected()){  
+        if(!jcbmCandidato.isSelected()){  //jcbmCandidato hace referencia a la opcion de mostrar candidatos
+                                          //en el menu de la parte superior de la ventana
+            
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
                     if(!MatrizS[i][j].isEncontrado()){
@@ -3321,14 +3328,14 @@ public class Principal extends javax.swing.JFrame {
  //   cronometro.resumen();
     }//GEN-LAST:event_formWindowActivated
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void OpcionResolverSudokuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionResolverSudokuActionPerformed
         new Fada1D().buscarSencillo(); // TODO add your handling code here:
         
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_OpcionResolverSudokuActionPerformed
 
-    private void jbRehacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRehacerActionPerformed
+    private void RehacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RehacerActionPerformed
        rehacer();
-    }//GEN-LAST:event_jbRehacerActionPerformed
+    }//GEN-LAST:event_RehacerActionPerformed
 
     
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -3340,16 +3347,16 @@ public class Principal extends javax.swing.JFrame {
        this.setEnabled(true);  // TODO add your handling code here:
     }//GEN-LAST:event_jDialog2WindowClosing
 
-    private void jbDeshacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeshacerActionPerformed
+    private void DeshacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeshacerActionPerformed
         deshacer();
-    }//GEN-LAST:event_jbDeshacerActionPerformed
+    }//GEN-LAST:event_DeshacerActionPerformed
 
     private void jmiDeshacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiDeshacerActionPerformed
-      deshacer(); // TODO add your handling code here:
+      deshacer(); // jmiDeshacer hace referencia a el Rehacer que esta en el menu superior
     }//GEN-LAST:event_jmiDeshacerActionPerformed
 
     private void jmiRehacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRehacerActionPerformed
-      rehacer();  // TODO add your handling code here:
+      rehacer();  // jmiRehacer hace referencia a el Rehacer que esta en el menu superior
     }//GEN-LAST:event_jmiRehacerActionPerformed
 
     private void BotonPistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPistasActionPerformed
@@ -3369,7 +3376,7 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BotonPistasActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void OpcionCrearJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionCrearJuegoActionPerformed
         int s = 0;
         if(celdaComplet < 81) s = showConfirmDialog(this,"¿Desea Salir De la partida?" );
         if(s==0){
@@ -3389,23 +3396,27 @@ public class Principal extends javax.swing.JFrame {
             BotonPistas.setEnabled(false);
             volverA.clear();
             pibote=0;
-            jbDeshacer.setEnabled(false);
-            jbRehacer.setEnabled(false);
+            Deshacer.setEnabled(false);
+            Rehacer.setEnabled(false);
             jmiDeshacer.setEnabled(false);
             jmiRehacer.setEnabled(false);
         }
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_OpcionCrearJuegoActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void OpcionNuevoJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionNuevoJuegoActionPerformed
         info.setText("Esto puede tardar un poco");
         dificil=false;
         crearNuevoJuego();
         volverA.clear();
         pibote = 0;
-        jbDeshacer.setEnabled(false);
-        jbRehacer.setEnabled(false);
+        Deshacer.setEnabled(false);
+        Rehacer.setEnabled(false);
 
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_OpcionNuevoJuegoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     
     /**
@@ -3469,10 +3480,10 @@ public class Principal extends javax.swing.JFrame {
             }
             pibote--;
             if(pibote<=0){
-                jbDeshacer.setEnabled(false);
+                Deshacer.setEnabled(false);
                 jmiDeshacer.setEnabled(false);
             }
-            jbRehacer.setEnabled(true);
+            Rehacer.setEnabled(true);
             jmiRehacer.setEnabled(true);
         }
     }
@@ -3520,11 +3531,11 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
             if(pibote==volverA.size()){
-                jbRehacer.setEnabled(false);
+                Rehacer.setEnabled(false);
                 jmiRehacer.setEnabled(false);
             }
             jmiDeshacer.setEnabled(true);
-            jbDeshacer.setEnabled(true); 
+            Deshacer.setEnabled(true); 
         }
     }
     private void reiniciar(){
@@ -3774,8 +3785,8 @@ public class Principal extends javax.swing.JFrame {
         if(!crear){
             jmiDeshacer.setEnabled(true);
             jmiRehacer.setEnabled(false);
-            jbDeshacer.setEnabled(true);         
-            jbRehacer.setEnabled(false);
+            Deshacer.setEnabled(true);         
+            Rehacer.setEnabled(false);
             if(pibote==0)volverA.clear();           
             while(volverA.size()!=pibote){
                 volverA.remove(volverA.size()-1);
@@ -3900,6 +3911,13 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonPistas;
+    private javax.swing.JButton Deshacer;
+    private javax.swing.JMenuItem OpcionCrearJuego;
+    private javax.swing.JMenuItem OpcionHistorialDeshacer;
+    private javax.swing.JMenuItem OpcionHistorialRehacer;
+    private javax.swing.JMenuItem OpcionNuevoJuego;
+    private javax.swing.JMenuItem OpcionResolverSudoku;
+    private javax.swing.JButton Rehacer;
     public static javax.swing.JTextArea c1;
     public static javax.swing.JTextArea c10;
     public static javax.swing.JTextArea c11;
@@ -3999,12 +4017,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -4022,8 +4035,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JButton jbDeshacer;
-    private javax.swing.JButton jbRehacer;
     public static javax.swing.JCheckBoxMenuItem jcbmCandidato;
     private javax.swing.JMenuItem jmiDeshacer;
     private javax.swing.JMenuItem jmiRehacer;
