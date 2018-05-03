@@ -6,33 +6,33 @@ import java.util.ArrayList;
 
 
 public class Ir {
-    private int f;
-    private int c;
-    private int num;
+    private int fila;
+    private int columna;
+    private int numero;
     private int tipo;
     ArrayList<Ir>vol = vol =  new ArrayList<>();;  
-    ArrayList<Integer> can = null;
+    ArrayList<Integer> candidatos = null;
     public Ir(int f, int c, ArrayList<Integer> can,int num,int tipo) {
-        this.f = f;
-        this.c = c;
-        this.can = can;
-        this.num = num;
+        this.fila = f;
+        this.columna = c;
+        this.candidatos = can;
+        this.numero = num;
         this.tipo = tipo;
     }
 
     public Ir(int f, int c, int num) {
-        this.f = f;
-        this.c = c;
-        this.num = num;
+        this.fila = f;
+        this.columna = c;
+        this.numero = num;
     }
     public int getF() {
-        return f;
+        return fila;
     }
     public int getC() {
-        return c;
+        return columna;
     }
     public int getNum() {
-        return num;
+        return numero;
     }
 
     public ArrayList<Ir> getVol() {
@@ -40,7 +40,7 @@ public class Ir {
     }
 
     public ArrayList<Integer> getCan() {
-        return can;
+        return candidatos;
     }
 
     public int getTipo() {

@@ -3442,13 +3442,13 @@ public class Principal extends javax.swing.JFrame {
             }
         }          
     }*/
-    private void deshacer(){
+    private void deshacer(){ // la complejidad en el mejor caso en 0 y en el peor es...
         if(!crear){
             Ir tem = volverA.get(pibote-1);
             int f=tem.getF();
             int c = tem.getC();
             MatrizS[f][c].getJtf().setText(null);
-            if(tem.getTipo()==1){
+            if(tem.getTipo()==1){ //peor caso del primer if es n^2
                 celdaComplet--;
                 MatrizS[f][c].getCandidatos().clear();
                 MatrizS[f][c].setCandidato((ArrayList<Integer>) tem.getCan().clone());
@@ -3459,7 +3459,7 @@ public class Principal extends javax.swing.JFrame {
                 jLabel2.setText("Celdas completadas "+celdaComplet);
                 ArrayList<Ir>vol = tem.getVol();
                 Ir aux = null;    
-                for (int i = 0; i < vol.size(); i++) {            
+                for (int i = 0; i < vol.size(); i++) {    // peor caso del segundo if es n^2        
                     aux= vol.get(i);
                     MatrizS[aux.getF()][aux.getC()].addNunm(aux.getNum());          
                     MatrizS[aux.getF()][aux.getC()].getJtf().setText(null);
@@ -3469,17 +3469,17 @@ public class Principal extends javax.swing.JFrame {
                     }          
                 }
             }
-            else{
+            else{ // mejor caso del segundo if es C (constante)
                 MatrizS[f][c].addNunm(tem.getNum());
             }
-            if(!MatrizS[f][c].isEncontrado()){
+            if(!MatrizS[f][c].isEncontrado()){// complejidad de el if peor caso es n
                ordenar(MatrizS[f][c].getCandidatos());
                 for (int i = 0; i < MatrizS[f][c].getCandidatos().size(); i++) {
                     MatrizS[f][c].getJtf().append(" "+MatrizS[f][c].getCandidatos().get(i));
                 }
             }
             pibote--;
-            if(pibote<=0){
+            if(pibote<=0){ // complejidad constante (C)
                 Deshacer.setEnabled(false);
                 jmiDeshacer.setEnabled(false);
             }
@@ -3487,7 +3487,7 @@ public class Principal extends javax.swing.JFrame {
             jmiRehacer.setEnabled(true);
         }
     }
-   private  void rehacer(){
+   private  void rehacer(){ // la complejidad de este metodo es igual al anterior
          if(!crear){
             pibote++;
             Ir tem = volverA.get(pibote-1);
@@ -3512,7 +3512,7 @@ public class Principal extends javax.swing.JFrame {
                 jLabel2.setText("Celdas completadas "+celdaComplet);
                 ArrayList<Ir>vol = tem.getVol();
                 Ir aux = null;    
-                for (int i = 0; i < vol.size(); i++) {            
+                for (int i = 0; i < vol.size(); i++) {    // peor caso del segundo if es n^2        
                     aux= vol.get(i);
                     MatrizS[aux.getF()][aux.getC()].getCandidatos().remove((Integer)aux.getNum());          
                     MatrizS[aux.getF()][aux.getC()].getJtf().setText(null);                    
@@ -3521,11 +3521,11 @@ public class Principal extends javax.swing.JFrame {
                     }          
                 }      
             }
-            else{
+            else{  // complejidad constante (C)
                 MatrizS[f][c].getCandidatos().remove((Integer)tem.getNum());
                 
             }
-            if(!MatrizS[f][c].isEncontrado()){                
+            if(!MatrizS[f][c].isEncontrado()){     // complejidad n           
                 for (int i = 0; i < MatrizS[f][c].getCandidatos().size(); i++) {
                    MatrizS[f][c].getJtf().append(" "+MatrizS[f][c].getCandidatos().get(i));
                 }
@@ -3540,7 +3540,7 @@ public class Principal extends javax.swing.JFrame {
     }
     private void reiniciar(){
         celdaComplet=0;     
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) { // complejidad constante
             for (int j = 0; j < 9; j++) {  
                 sudoku[i][j]=0;
                 MatrizS[i][j].setEncontrado(false);
@@ -3587,7 +3587,7 @@ public class Principal extends javax.swing.JFrame {
         }
         if(celdaComplet==81){
             int tem[][]= new int[9][9];
-            for (int i = 0; i < 9; i++) {
+            for (int i = 0; i < 9; i++) { // complejidad constante (C)
                 for (int j = 0; j < 9; j++) {  
                     tem[i][j]= MatrizS[i][j].getNumero();
                     MatrizS[i][j].setEncontrado(false);
@@ -3599,7 +3599,7 @@ public class Principal extends javax.swing.JFrame {
                 }            
             }
             celdaComplet=0;             
-            for (int i = 0; i < 9; i++) {
+            for (int i = 0; i < 9; i++) {  // complejidad constante (C)
                 for (int j = 0; j < 9; j++) {                     
                     if(sudoku[i][j] !=0){
                         MatrizS[i][j].addNunm(sudoku[i][j]);
@@ -3618,7 +3618,7 @@ public class Principal extends javax.swing.JFrame {
              info.setText(null);
 
              if(dificil) jLabel3.setText("Dificil");
-             else jLabel3.setText("Normal");
+                else jLabel3.setText("Normal");
              new FadaCandidatos().PosibiDisp();
          }
         }catch(Exception e){
@@ -3638,7 +3638,7 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt,JMenuItem jMen) {   
         
         if(sudoku[fila][columna] != (Integer)Integer.parseInt(jMen.getName()) || !tieSolucion){
-            iarA(Integer.parseInt(jMen.getName()),2);
+            IrA(Integer.parseInt(jMen.getName()),2);
             MatrizS[fila][columna].EliminarCandidato((Integer)Integer.parseInt(jMen.getName()));
         
            MatrizS[fila][columna].getJtf().setText(null);
@@ -3654,7 +3654,7 @@ public class Principal extends javax.swing.JFrame {
     } 
     private void jMenuItem2ActionPerformed2(java.awt.event.ActionEvent evt,JMenuItem jMen) {   
         if(sudoku[fila][columna] == (Integer)Integer.parseInt(jMen.getName()) || crear  || !tieSolucion ){
-            iarA(Integer.parseInt(String.valueOf(jMen.getName())),1);
+            IrA(Integer.parseInt(String.valueOf(jMen.getName())),1);
             MatrizS[fila][columna].setEncontrado(true);   
             MatrizS[fila][columna].getJtf().setText(" "+jMen.getName());
             MatrizS[fila][columna].setNumero(Integer.parseInt(String.valueOf(jMen.getName())));
@@ -3666,8 +3666,8 @@ public class Principal extends javax.swing.JFrame {
             MatrizS[fila][columna].getJtf().setBackground(color2);                        
             MatrizS[fila][columna].getCandidatos().clear();
             MatrizS[fila][columna].addNunm(Integer.parseInt(String.valueOf(jMen.getName())));
-            eliminarCol(Integer.parseInt(String.valueOf(jMen.getName())));
-            eliminarNumFil(Integer.parseInt(String.valueOf(jMen.getName())));
+            eliminarColumna(Integer.parseInt(String.valueOf(jMen.getName())));
+            eliminarNumeroFila(Integer.parseInt(String.valueOf(jMen.getName())));
             eliminarCuadro(Integer.parseInt(String.valueOf(jMen.getName())));
             if(celdaComplet == 81){ 
          
@@ -3683,7 +3683,7 @@ public class Principal extends javax.swing.JFrame {
         MatrizS[fila][columna].setEncontrado(false);
         MatrizS[fila][columna].getJtf().setFont(new java.awt.Font("Monospaced", 0, 12));
         celdaComplet--;
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) { // complejidad constante
             for (int j = 0; j < 9; j++) {
                 if(!MatrizS[i][j].isEncontrado()){
                     MatrizS[i][j].getCandidatos().clear();
@@ -3757,7 +3757,7 @@ public class Principal extends javax.swing.JFrame {
         else if(!MatrizS[fila][columna].isEncontrado()&&(c!='0') && estaNumero(Integer.parseInt(String.valueOf(c)))){
             if(sudoku[fila][columna] == Integer.parseInt(String.valueOf(c)) || crear || !tieSolucion){
                 cc.setText(" "+c);
-                iarA(Integer.parseInt(String.valueOf(c)),1);
+                IrA(Integer.parseInt(String.valueOf(c)),1);
                 MatrizS[fila][columna].setNumero(Integer.parseInt(String.valueOf(c)));
                 MatrizS[fila][columna].setEncontrado(true);
                 cc.setFont(new java.awt.Font("Monospaced", 1, 24));                         
@@ -3767,8 +3767,8 @@ public class Principal extends javax.swing.JFrame {
                 cc.setBackground(Ventanas.Principal.color2);                        
                 MatrizS[fila][columna].getCandidatos().clear();
                 MatrizS[fila][columna].addNunm(Integer.parseInt(String.valueOf(c)));
-                eliminarCol(Integer.parseInt(String.valueOf(c)));
-                eliminarNumFil(Integer.parseInt(String.valueOf(c)));
+                eliminarColumna(Integer.parseInt(String.valueOf(c)));
+                eliminarNumeroFila(Integer.parseInt(String.valueOf(c)));
                 eliminarCuadro(Integer.parseInt(String.valueOf(c)));
                 if(celdaComplet == 81){ 
        
@@ -3781,7 +3781,7 @@ public class Principal extends javax.swing.JFrame {
             }
         }
     }
-    void iarA(int num, int tipo){
+    void IrA(int num, int tipo){
         if(!crear){
             jmiDeshacer.setEnabled(true);
             jmiRehacer.setEnabled(false);
@@ -3789,7 +3789,7 @@ public class Principal extends javax.swing.JFrame {
             Rehacer.setEnabled(false);
             if(pibote==0)volverA.clear();           
             while(volverA.size()!=pibote){
-                volverA.remove(volverA.size()-1);
+                volverA.remove(volverA.size()-1);// complejidad n
             }
             if(tipo==1)
                 ir = new Ir(fila, columna, (ArrayList<Integer>) MatrizS[fila][columna].getCandidatos().clone(),num,tipo);
@@ -3799,17 +3799,17 @@ public class Principal extends javax.swing.JFrame {
         }
     }
     boolean estaNumero(int num){
-        for (int i = 0; i < MatrizS[fila][columna].getCandidatos().size(); i++) {
+        for (int i = 0; i < MatrizS[fila][columna].getCandidatos().size(); i++) { // complejidad n
             if(MatrizS[fila][columna].getCandidatos().get(i)==num)
                 return true;
         }
         return false;
     }
-    public void eliminarCol(int num){
+    public void eliminarColumna(int num){
         ArrayList tem = null;
-        for (int i =0; i < 9; i++) {
+        for (int i =0; i < 9; i++) { // complejidad constante (C)
             tem = MatrizS[i][columna].getCandidatos();
-            for (int j = 0; j < tem.size(); j++) {
+            for (int j = 0; j < tem.size(); j++) { // complejidad n
                 if(num == (int)tem.get(j) && !MatrizS[i][columna].isEncontrado()){
                      if(!crear)ir.add(new Ir(i, columna, num));
                     MatrizS[i][columna].EliminarCandidato((Integer) tem.get(j));
@@ -3819,11 +3819,11 @@ public class Principal extends javax.swing.JFrame {
             }
         }
     }
-    private void eliminarNumFil(int num){
+    private void eliminarNumeroFila(int num){
         ArrayList tem = null;
-        for (int i =0; i < 9; i++) {
+        for (int i =0; i < 9; i++) { // complejidad constante (C)
             tem = MatrizS[fila][i].getCandidatos();
-            for (int j = 0; j < tem.size(); j++) {
+            for (int j = 0; j < tem.size(); j++) { // complejidad n
                 if(num == (int)tem.get(j)&& !MatrizS[fila][i].isEncontrado()){
                    if(!crear) ir.add(new Ir(fila, i, num));
                    MatrizS[fila][i].EliminarCandidato( (Integer) tem.get(j));
@@ -3833,23 +3833,25 @@ public class Principal extends javax.swing.JFrame {
             }
         }
     }
-    private void eliminarCuadro(int num){
-        for (int f = (fila/3)*3; f < (fila/3)*3+3; f++) {
-            for (int c = (columna/3)*3; c < (columna/3)*3+3; c++) {
-                if(!MatrizS[f][c].isEncontrado()){
-                    ArrayList<Integer>tem ;
-                    tem =MatrizS[f][c].getCandidatos();
-                    for (int i = 0; i < tem.size(); i++) {
-                        if(tem.get(i)== num){
-                            if(!crear)ir.add(new Ir(f, c, num));
-                            MatrizS[f][c].EliminarCandidato( (Integer) tem.get(i));                        
-                            if(jcbmCandidato.isSelected()){
+    private void eliminarCuadro(int num) {
+        for (int f = (fila / 3) * 3; f < (fila / 3) * 3 + 3; f++) { // complejidad n
+            for (int c = (columna / 3) * 3; c < (columna / 3) * 3 + 3; c++) { // complejidad n
+                if (!MatrizS[f][c].isEncontrado()) {
+                    ArrayList<Integer> tem;
+                    tem = MatrizS[f][c].getCandidatos();
+                    for (int i = 0; i < tem.size(); i++) { // complejidad n
+                        if (tem.get(i) == num) {
+                            if (!crear) {
+                                ir.add(new Ir(f, c, num));
+                            }
+                            MatrizS[f][c].EliminarCandidato((Integer) tem.get(i));
+                            if (jcbmCandidato.isSelected()) {
                                 MatrizS[f][c].getJtf().setText(null);
-                                for (int j = 0; j < MatrizS[f][c].getCandidatos().size(); j++) {                                   
-                                   MatrizS[f][c].getJtf().append(" "+ MatrizS[f][c].getCandidatos().get(j));
+                                for (int j = 0; j < MatrizS[f][c].getCandidatos().size(); j++) { // complejidad n
+                                    MatrizS[f][c].getJtf().append(" " + MatrizS[f][c].getCandidatos().get(j));
                                 }
                             }
-                          break;
+                            break;
                         }
                     }
                 }
@@ -3859,13 +3861,13 @@ public class Principal extends javax.swing.JFrame {
     private void imprimirPosibilidades(int fil, int col){
         if(!MatrizS[fil][col].isEncontrado())
            MatrizS[fil][col].getJtf().setText(null);
-        for (int i = 0; i <   MatrizS[fil][col].getCandidatos().size(); i++) {
+        for (int i = 0; i <   MatrizS[fil][col].getCandidatos().size(); i++) { // complejidad n
             if(!MatrizS[fil][col].isEncontrado())
                 MatrizS[fil][col].getJtf().append(" "+MatrizS[fil][col].getCandidatos().get(i));
         }
     }
     private void ordenar( ArrayList<Integer> array){
-        for (int i = 0; i < array.size(); i++) {
+        for (int i = 0; i < array.size(); i++) { // complejidad n^2
             for (int j = 0; j < array.size(); j++) {
                 if(array.get(i) < array.get(j)){
                     int tem = array.get(i);
