@@ -176,7 +176,7 @@
     </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="File">
           <Properties>
             <Property name="text" type="java.lang.String" value="File"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -200,7 +200,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu">
+        <Menu class="javax.swing.JMenu" name="Opciones">
           <Properties>
             <Property name="text" type="java.lang.String" value="Opciones"/>
             <Property name="doubleBuffered" type="boolean" value="true"/>
@@ -212,7 +212,7 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+Z"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Deshsacer"/>
+                <Property name="text" type="java.lang.String" value="Deshacer"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -230,7 +230,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu4">
+        <Menu class="javax.swing.JMenu" name="Ver">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ver"/>
           </Properties>
@@ -260,7 +260,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
+        <Menu class="javax.swing.JMenu" name="Historial">
           <Properties>
             <Property name="text" type="java.lang.String" value="Historial"/>
           </Properties>
