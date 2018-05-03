@@ -2532,6 +2532,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_c61KeyTyped
 
     private void jcbmCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbmCandidatoActionPerformed
+//         long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
+//         TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+//         //ALGORITMO 
+//        
         if(!jcbmCandidato.isSelected()){  //jcbmCandidato hace referencia a la opcion de mostrar candidatos
                                           //en el menu de la parte superior de la ventana
             
@@ -2556,6 +2560,11 @@ public class Principal extends javax.swing.JFrame {
                 
             }
         }
+//         TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+//         tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+//         System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
+//    
+        
     }//GEN-LAST:event_jcbmCandidatoActionPerformed
 
     private void c1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c1MousePressed
@@ -3671,7 +3680,7 @@ public class Principal extends javax.swing.JFrame {
             eliminarCuadro(Integer.parseInt(String.valueOf(jMen.getName())));
             if(celdaComplet == 81){ 
          
-                info.setText("FIN DE JUGO");
+                info.setText("FIN DE JUEGO");
                 info.setBackground(new Color(86,250,118));
             }  
         }
