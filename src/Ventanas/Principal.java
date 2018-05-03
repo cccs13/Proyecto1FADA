@@ -3847,7 +3847,7 @@ public class Principal extends javax.swing.JFrame {
                             MatrizS[f][c].EliminarCandidato((Integer) tem.get(i));
                             if (jcbmCandidato.isSelected()) {
                                 MatrizS[f][c].getJtf().setText(null);
-                                for (int j = 0; j < MatrizS[f][c].getCandidatos().size(); j++) { // complejidad n
+                                for (int j = 0; j < MatrizS[f][c].getCandidatos().size(); j++) { // Complejidad n
                                     MatrizS[f][c].getJtf().append(" " + MatrizS[f][c].getCandidatos().get(j));
                                 }
                             }
