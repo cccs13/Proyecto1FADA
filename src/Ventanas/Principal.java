@@ -2532,10 +2532,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_c61KeyTyped
 
     private void jcbmCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbmCandidatoActionPerformed
-//         long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
-//         TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+         long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
+         TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
 //         //ALGORITMO 
-//        
+        
         if(!jcbmCandidato.isSelected()){  //jcbmCandidato hace referencia a la opcion de mostrar candidatos
                                           //en el menu de la parte superior de la ventana
             
@@ -2560,10 +2560,10 @@ public class Principal extends javax.swing.JFrame {
                 
             }
         }
-//         TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
-//         tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
-//         System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
-//    
+         TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+         tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+         System.out.println("Tiempo de ejecución de jcmCandidato en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
+    
         
     }//GEN-LAST:event_jcbmCandidatoActionPerformed
 
@@ -3365,6 +3365,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiRehacerActionPerformed
 
     private void BotonPistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPistasActionPerformed
+         long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
+         TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+         //ALGORITMO 
+        
         if(celdaComplet<81){
             pista=true; 
             info.setBackground(new Color(240,240,240));
@@ -3379,11 +3383,18 @@ public class Principal extends javax.swing.JFrame {
             new Fada1D().buscarSencillo();
             pista=false;  // TODO add your handling code here:
         }
+         TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+         tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+         System.out.println("Tiempo de ejecución boton pista en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
+    
     }//GEN-LAST:event_BotonPistasActionPerformed
 
     private void OpcionCrearJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionCrearJuegoActionPerformed
+        long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
+         TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+      
         int s = 0;
-        if(celdaComplet < 81) s = showConfirmDialog(this,"¿Desea Salir De la partida?" );
+    //    if(celdaComplet < 81) s = showConfirmDialog(this,"¿Desea Salir De la partida?" );
         if(s==0){
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
@@ -3406,9 +3417,16 @@ public class Principal extends javax.swing.JFrame {
             jmiDeshacer.setEnabled(false);
             jmiRehacer.setEnabled(false);
         }
+         TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+         tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+         System.out.println("Tiempo de ejecución CrearJuego en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
+    
     }//GEN-LAST:event_OpcionCrearJuegoActionPerformed
 
     private void OpcionNuevoJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionNuevoJuegoActionPerformed
+         long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
+         TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+      
         info.setText("Esto puede tardar un poco");
         dificil=false;
         crearNuevoJuego();
@@ -3416,7 +3434,10 @@ public class Principal extends javax.swing.JFrame {
         pibote = 0;
         Deshacer.setEnabled(false);
         Rehacer.setEnabled(false);
-
+         TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+         tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+         System.out.println("Tiempo de ejecución CrearNuevoJuego en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
+    
     }//GEN-LAST:event_OpcionNuevoJuegoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -3426,32 +3447,11 @@ public class Principal extends javax.swing.JFrame {
     private void jmiDeshacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiDeshacerActionPerformed
         deshacer(); // jmiDeshacer hace referencia a el Rehacer que esta en el menu superior
     }//GEN-LAST:event_jmiDeshacerActionPerformed
-    
-    
-    /**
-     * @param args the command line arguments
-     */
-    /*private void filtros(int num){
         
-        for (int f = 0; f < 9; f++) {
-            for (int c = 0; c < 9; c++) {
-                if(MatrizS[f][c].isEncontrado())
-                    MatrizS[f][c].getJtf().setBackground(color2);
-                else MatrizS[f][c].getJtf().setBackground(color3); 
-                
-                if(!MatrizS[f][c].isEncontrado()){                 
-                    ArrayList <Integer>tem = MatrizS[f][c].getCandidatos(); 
-                    for (int i = 0; i < tem.size(); i++) {
-                        if(tem.get(i)==num){
-                             MatrizS[f][c].getJtf().setBackground(new Color(171,241,171));
-                        break;
-                        }
-                    }
-                }
-            }
-        }          
-    }*/
     private void deshacer(){ // la complejidad en el mejor caso en 0 y en el peor es...
+           long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
+         TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+       
         if(!crear){
             Ir tem = volverA.get(pibote-1);
             int f=tem.getF();
@@ -3495,9 +3495,16 @@ public class Principal extends javax.swing.JFrame {
             Rehacer.setEnabled(true);
             jmiRehacer.setEnabled(true);
         }
+               TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+         tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+        System.out.println("Tiempo de ejecución Deshacer en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
+    
     }
    private  void rehacer(){ // la complejidad de este metodo es igual al anterior
-         if(!crear){
+          long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
+         TInicio = System.currentTimeMillis(); //Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+        
+       if(!crear){
             pibote++;
             Ir tem = volverA.get(pibote-1);
             int f=tem.getF();
@@ -3546,6 +3553,10 @@ public class Principal extends javax.swing.JFrame {
             jmiDeshacer.setEnabled(true);
             Deshacer.setEnabled(true); 
         }
+          TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+         tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+        System.out.println("Tiempo de ejecución Rehacer en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
+    
     }
     private void reiniciar(){
         celdaComplet=0;     
@@ -3563,7 +3574,7 @@ public class Principal extends javax.swing.JFrame {
       
     }
     void crearNuevoJuego(){
-        dificil=false;
+        dificil=true;
         try{
             reiniciar();
             new FadaCandidatos().PosibiDisp();
